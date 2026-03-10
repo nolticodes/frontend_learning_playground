@@ -26,9 +26,27 @@ function renderNotes() {
     }
 }
 
+// function getNoteTemplate(indexNote) {
+//     return `<p>+${notesTitle[indexNote]} ${notes[indexNote]} <button onclick="moveToTrash(${indexNote})">Papierkorb</button> </p> `
+// }
+
 function getNoteTemplate(indexNote) {
-    return `<p>+${notesTitle[indexNote]} ${notes[indexNote]} <button onclick="moveToTrash(${indexNote})">Papierkorb</button> </p> `
+    return `<div class="notes_style">
+                <div class="notes_style_header">
+                    <h2>${notesTitle[indexNote]}</h2>
+                </div>
+                
+                <div class="notes_style_main">
+                    <p>${notes[indexNote]}</p>
+                </div>
+                <div class="notes_style_footer">
+                    <button onclick="moveToTrash(${indexNote})" class="button_archive_delete">X</button>
+                </div>
+            </div>`
 }
+
+
+    
 
 // 2. TRASH NOTES
 function renderTrashNotes() {
@@ -41,8 +59,21 @@ function renderTrashNotes() {
 }
 
 function getTrashNoteTemplate(indexTrashNote) {
-    return `<p>+ ${trashNotesTitle[indexTrashNote]} ${trashNotes[indexTrashNote]} <button onclick="deleteNote(${indexTrashNote})">Löschen</button> </p> `
+    return `<div class="notes_style">
+                <div class="notes_style_header">
+                    <h2>${trashNotesTitle[indexTrashNote]}</h2>
+                </div>
+                
+                <div class="notes_style_main">
+                    <p>${trashNotes[indexTrashNote]}</p>
+                </div>
+                <div class="notes_style_footer">
+                    <button onclick="deleteNote(${indexTrashNote})" class="button_archive_delete">X</button>
+                </div>
+            </div>`
 }
+
+
 
 
 // Add Notes
@@ -84,7 +115,7 @@ function moveToTrash(indexNote) {
 function deleteNote(indexNote) {
    let trashNote = trashNotes.splice(indexNote, 1);
    let trashNoteTitle = trashNotesTitle.splice(indexNote, 1);
-   
+
    saveTrashNotesToLocalStorage();
    saveTrashTitleNotesToLocalStorage();
    renderNotes();
