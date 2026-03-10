@@ -1,12 +1,15 @@
 
+let notesTitle = [];
 let notes = [];
-
+let trashNotesTitle = [];
 let trashNotes = []
 
 // START
 function init() {
+    getTitleNotesFromLocalStorage();
     getNotesFromLocalStorage();
     renderNotes();
+    getTrashTitleNotesFromLocalStorage();
     getTrashNotesFromLocalStorage();
     renderTrashNotes();
 }
@@ -24,7 +27,7 @@ function renderNotes() {
 }
 
 function getNoteTemplate(indexNote) {
-    return `<p>+ ${notes[indexNote]} <button onclick="moveToTrash(${indexNote})">Papierkorb</button> </p> `
+    return `<p>+${notesTitle[indexNote]} ${notes[indexNote]} <button onclick="moveToTrash(${indexNote})">Papierkorb</button> </p> `
 }
 
 // 2. TRASH NOTES
@@ -38,19 +41,23 @@ function renderTrashNotes() {
 }
 
 function getTrashNoteTemplate(indexTrashNote) {
-    return `<p>+ ${trashNotes[indexTrashNote]} <button onclick="deleteNote(${indexTrashNote})">Löschen</button> </p> `
+    return `<p>+ ${trashNotesTitle[indexTrashNote]} ${trashNotes[indexTrashNote]} <button onclick="deleteNote(${indexTrashNote})">Löschen</button> </p> `
 }
 
 
 // Add Notes
 function addNote() {
     let noteInputRef = document.getElementById("note_input");
+    let noteTitleInputRef = document.getElementById("note_title_input");
 
-    if(noteInputRef.value != ""){
+    if(noteInputRef.value != "" && noteTitleInputRef.value != ""){
+        notesTitle.push(noteTitleInputRef.value);
         notes.push(noteInputRef.value);
     }
+    saveTitleNotesToLocalStorage();
     saveNotesToLocalStorage();
     renderNotes();
+    noteTitleInputRef.value = ""
     noteInputRef.value = ""
 }
 
@@ -58,9 +65,16 @@ function addNote() {
 // NOTE TO ARCHIVE
 function moveToTrash(indexNote) {
    let trashNote = notes.splice(indexNote, 1);
+   let trashTitleNote = notesTitle.splice(indexNote, 1);
+   
    trashNotes.push(trashNote);
+   trashNotesTitle.push(trashTitleNote);
+   
+   saveTitleNotesToLocalStorage()
    saveNotesToLocalStorage();
+   saveTrashTitleNotesToLocalStorage();
    saveTrashNotesToLocalStorage();
+
    renderNotes();
    renderTrashNotes();
 }
@@ -69,6 +83,10 @@ function moveToTrash(indexNote) {
 // Delete Notes
 function deleteNote(indexNote) {
    let trashNote = trashNotes.splice(indexNote, 1);
+   let trashNoteTitle = trashNotesTitle.splice(indexNote, 1);
+   
+   saveTrashNotesToLocalStorage();
+   saveTrashTitleNotesToLocalStorage();
    renderNotes();
    renderTrashNotes();
 }
@@ -76,12 +94,21 @@ function deleteNote(indexNote) {
 
 // SAVE NOTES 
 // 1. NOTES
+let myTitleLocalStorage = JSON.parse(localStorage.getItem("titleNotes"));
+let myLocalStorage = JSON.parse(localStorage.getItem("notes"));
+let myLocalTrashStorage = JSON.parse(localStorage.getItem("trashNotes"));
+let myLocalTrashTitleStorage = JSON.parse(localStorage.getItem("trashTitleNotes"));
+
+
 function saveNotesToLocalStorage() {
     localStorage.setItem("notes", JSON.stringify(notes))
 }
 
+function saveTitleNotesToLocalStorage() {
+    localStorage.setItem("titleNotes", JSON.stringify(notesTitle))
+}
+
 function getNotesFromLocalStorage() {
-    let myLocalStorage = JSON.parse(localStorage.getItem("notes"));
     if(myLocalStorage === null){
         notes 
     }
@@ -90,14 +117,23 @@ function getNotesFromLocalStorage() {
     }
 } 
 
-let myLocalStorage = JSON.parse(localStorage.getItem("notes"));
-let myLocalTrashStorage = JSON.parse(localStorage.getItem("trashNotes"));
-
+function getTitleNotesFromLocalStorage() {
+    if(myTitleLocalStorage === null){
+        notesTitle 
+    }
+    else {
+        notesTitle = myTitleLocalStorage;
+    }
+} 
 
 
 // 2. TRASH NOTES
- function saveTrashNotesToLocalStorage() {
+function saveTrashNotesToLocalStorage() {
     localStorage.setItem("trashNotes", JSON.stringify(trashNotes))
+}
+
+function saveTrashTitleNotesToLocalStorage() {
+    localStorage.setItem("trashTitleNotes", JSON.stringify(trashNotesTitle))
 }
 
 function getTrashNotesFromLocalStorage() {
@@ -106,5 +142,13 @@ function getTrashNotesFromLocalStorage() {
     }
     else {
         trashNotes = myLocalTrashStorage;
+    }
+} 
+function getTrashTitleNotesFromLocalStorage() {
+    if(myLocalTrashTitleStorage === null){
+        trashNotesTitle 
+    }
+    else {
+        trashNotesTitle = myLocalTrashTitleStorage;
     }
 } 
