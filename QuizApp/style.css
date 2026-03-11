@@ -4,5 +4,29 @@
 
 body {
     height: 100dvh;
+}
+
+main {
     background-color: rgb(254 250 240) !important;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.question_footer {
+    padding-top: 8px;
+    border-top: 1px solid rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.quiz_card {
+    width: 30rem;
+}
+
+.card_answer_style:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.05);
 }

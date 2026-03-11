@@ -17,13 +17,59 @@
 
 </head>
 
-<body>
+<body onload="init()">
 
-    <nav class="navbar bg-body-tertiary">
-        <div class="container-fluid">
-            <span class="navbar-brand mb-0 h1">Navbar</span>
+    <header>
+        <nav class="navbar bg-body-tertiary">
+            <div class="container-fluid">
+                <span class="navbar-brand mb-0 h1">Navbar</span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <div class="card quiz_card">
+            <img src="./assets/img/ye.png" alt="Bild">
+            <div class="card-body">
+
+                <h5 class="card-title" id="questionText">Frage</h5>
+
+                <div class="card mb-2 card_answer_style" onclick="clickAnswer('answer_1')">
+                    <div class="card-body" id="answer_one">
+                        Antwort
+                    </div>
+                </div>
+
+                <div class="card mb-2 card_answer_style" onclick="clickAnswer('answer_2')">
+                    <div class="card-body" id="answer_two">
+                        Antwort
+                    </div>
+                </div>
+
+                <div class="card mb-2 card_answer_style onclick="clickAnswer('answer_3')">
+                    <div class="card-body" id="answer_three">
+                        Antwort
+                    </div>
+                </div>
+
+                <div class="card mb-2 card_answer_style" onclick="clickAnswer('answer_4')">
+                    <div class="card-body" id="answer_four">
+                        Antwort
+                    </div>
+                </div>
+
+                <div class="question_footer">
+                    <div>
+                        Frage <b>1</b> von <b  id="questions_counter_all">5</b>
+                    </div>
+                    <button type="button" class="btn btn-dark">Nächste Frage</button>
+                </div>
+
+            </div>
         </div>
-    </nav>
+
+    </main>
 
 </body>
 
