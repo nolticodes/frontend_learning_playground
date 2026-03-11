@@ -64,10 +64,10 @@ function showAnswers() {
     let answerThree = questions[currentQuestion];
     let answerFour = questions[currentQuestion];
     
-    let answerOneRef = document.getElementById("answer_one");
-    let answerTwoRef = document.getElementById("answer_two");
-    let answerThreeRef = document.getElementById("answer_three");
-    let answerFourRef = document.getElementById("answer_four");
+    let answerOneRef = document.getElementById("answer_1");
+    let answerTwoRef = document.getElementById("answer_2");
+    let answerThreeRef = document.getElementById("answer_3");
+    let answerFourRef = document.getElementById("answer_4");
 
     answerOneRef.innerHTML = answerOne["answer_1"];
     answerTwoRef.innerHTML = answerTwo["answer_2"];
@@ -76,6 +76,17 @@ function showAnswers() {
 }
 
 function clickAnswer(i) {
+    let question = questions[currentQuestion];
+    let answerSelected = i.slice(-1);
+    let idOfRightAnswer = `answer_${question["right_answer"]}`;
 
-    
+    if(answerSelected == question["right_answer"]){
+        console.log("richtig");
+        document.getElementById(i).parentNode.classList.add("bg-success");
+
+    } else {
+        console.log("falsch")
+        document.getElementById(i).parentNode.classList.add("bg-danger");
+        document.getElementById(idOfRightAnswer).parentNode.classList.add("bg-success");
+    }
 }
