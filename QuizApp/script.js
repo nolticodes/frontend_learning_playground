@@ -1,3 +1,4 @@
+
 let questions = [
     {
         "question": "Wie ist der Vorname von Kanye West?",
@@ -75,5 +76,5 @@ function showAnswers() {
 }
 
 function clickAnswer(i) {
-    
+
 }
