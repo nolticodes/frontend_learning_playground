@@ -1,4 +1,6 @@
 
+let currentQuestion = 0;
+let questionsRightAnswered = 0;
 let questions = [
     {
         "question": "Wie ist der Vorname von Kanye West?",
@@ -42,8 +44,6 @@ let questions = [
     },
 ];
 
-let currentQuestion = 0;
-
 
 function init() {
     document.getElementById("questions_counter_all").innerHTML = questions.length;
@@ -52,10 +52,23 @@ function init() {
 }
 
 function showQuestion() {
-    let question = questions[currentQuestion];
-    let questionTextRef = document.getElementById("questionText")
-    
-    questionTextRef.innerHTML = question["question"]
+
+    if (currentQuestion >= questions.length) {
+        document.getElementById("end_quiz_body").style = ""
+        document.getElementById("quiz_body").style = "display: none"
+        document.getElementById("questions_counter_all_score").innerHTML = questions.length;
+        document.getElementById("amount_correct_answer").innerHTML = questionsRightAnswered;
+
+    } else {
+        let question = questions[currentQuestion];
+        let questionTextRef = document.getElementById("questionText");
+        let progressInPercent = ((currentQuestion + 1) / questions.length) * 100;
+
+        document.getElementById("progress_bar_id").style = `width: ${progressInPercent}%;`;         
+        document.getElementById("progress_bar_id").innerHTML = `${progressInPercent} %`; 
+        document.getElementById("questions_counter_current").innerHTML = currentQuestion +1;
+        questionTextRef.innerHTML = question["question"]
+    }
 }
 
 function showAnswers() {
@@ -63,7 +76,6 @@ function showAnswers() {
     let answerTwo = questions[currentQuestion];
     let answerThree = questions[currentQuestion];
     let answerFour = questions[currentQuestion];
-    
     let answerOneRef = document.getElementById("answer_1");
     let answerTwoRef = document.getElementById("answer_2");
     let answerThreeRef = document.getElementById("answer_3");
@@ -82,18 +94,33 @@ function clickAnswer(i) {
 
     if(answerSelected == question["right_answer"]){
         document.getElementById(i).parentNode.classList.add("bg-success");
+        questionsRightAnswered = questionsRightAnswered +1
     } else {
         document.getElementById(i).parentNode.classList.add("bg-danger");
         document.getElementById(idOfRightAnswer).parentNode.classList.add("bg-success");
     }
     document.getElementById("next_button_id").disabled = false; 
-
 }
 
 function clickNextQuestionBtn() {
-    document.getElementById("next_button_id").disabled = true;
-    
     currentQuestion = currentQuestion +1; 
+    document.getElementById("next_button_id").disabled = true;
+    resetColorAnswerButtons();
     showQuestion();
     showAnswers(); 
 }
+
+function resetColorAnswerButtons(){
+    document.getElementById("answer_1").parentNode.classList.remove("bg-danger");
+    document.getElementById("answer_1").parentNode.classList.remove("bg-success"); 
+    document.getElementById("answer_2").parentNode.classList.remove("bg-danger");
+    document.getElementById("answer_2").parentNode.classList.remove("bg-success");  
+    document.getElementById("answer_3").parentNode.classList.remove("bg-danger");
+    document.getElementById("answer_3").parentNode.classList.remove("bg-success");  
+    document.getElementById("answer_4").parentNode.classList.remove("bg-danger");
+    document.getElementById("answer_4").parentNode.classList.remove("bg-success");    
+}
+
+
+
+

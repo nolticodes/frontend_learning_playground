@@ -34,3 +34,7 @@ main {
 .bg-success, .bg-danger {
     color: white !important;
 }
+
+.progress_bar {
+    margin: 16px;
+}
