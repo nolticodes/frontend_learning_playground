@@ -120,6 +120,14 @@ function resetColorAnswerButtons(){
     document.getElementById("answer_4").parentNode.classList.remove("bg-success");    
 }
 
+function startNewGame() {
+    currentQuestion = 0;
+    questionsRightAnswered = 0;
+    document.getElementById("end_quiz_body").style = "display: none";
+    document.getElementById("quiz_body").style = "";
+    init()
+}
+
 
 
 
