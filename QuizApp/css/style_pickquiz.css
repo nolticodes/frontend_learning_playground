@@ -31,7 +31,6 @@
 
 .select_quiz_navbar_text_style h3 {
     font-size: 40px;
-    font-family: "Rubik", sans-serif;
     font-weight: normal;
     color: lightgrey;
 }
@@ -60,7 +59,6 @@
 
 
 .select_quiz_content h2 {
-    font-family: "PT Sans", sans-serif;
     font-size: 64px !important;
     font-weight: bolder !important;
     color: black !important;
