@@ -81,14 +81,19 @@ function clickAnswer(i) {
     let idOfRightAnswer = `answer_${question["right_answer"]}`;
 
     if(answerSelected == question["right_answer"]){
-        console.log("richtig");
         document.getElementById(i).parentNode.classList.add("bg-success");
     } else {
-        console.log("falsch")
         document.getElementById(i).parentNode.classList.add("bg-danger");
         document.getElementById(idOfRightAnswer).parentNode.classList.add("bg-success");
     }
-    document.getElementById("netx_button_id").disabled = false; 
-    
+    document.getElementById("next_button_id").disabled = false; 
+
 }
 
+function clickNextQuestionBtn() {
+    document.getElementById("next_button_id").disabled = true;
+    
+    currentQuestion = currentQuestion +1; 
+    showQuestion();
+    showAnswers(); 
+}
