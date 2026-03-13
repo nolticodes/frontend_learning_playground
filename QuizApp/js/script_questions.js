@@ -177,3 +177,10 @@ const allQuizData = {
     quiz_navbar_text_3: quiz_navbar_text_3,
     quiz_navbar_text_4: quiz_navbar_text_4
 };
+
+const allImageData = {
+    quiz_navbar_text_1: "./assets/img/ye.png",
+    quiz_navbar_text_2: "./assets/img/souly.png",
+    quiz_navbar_text_3: "./assets/img/makko.png",
+    quiz_navbar_text_4: "./assets/img/yung_hurn.png",
+};

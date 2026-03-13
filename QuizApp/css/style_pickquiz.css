@@ -10,7 +10,7 @@
     justify-content: flex-start;
     height: 100%;
     width: 25%;
-    background-color: darkblue;
+    background-color: black;
 }
 
 .select_quiz_navbar_style img {
@@ -44,24 +44,35 @@
 }
 
 .select_quiz_content {
-    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(../assets/img/ye.png);
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(../assets/img/musik_cover.png);
     background-position: center;
     background-size: cover;
     height: 100%;
     width: 100%;
     padding-top: 40px;
+    padding-bottom:  80px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     text-align: center;
 }
 
 
 .select_quiz_content h2 {
-    font-size: 64px !important;
-    font-weight: bolder !important;
+    font-size: 56px !important;
+    font-weight: bold !important;
     color: black !important;
     padding-bottom: 32px;
+}
+
+.select_quiz_content h3 {
+    font-size: 40px;
+    padding-bottom: 24px;
+}
+
+#quiz_body {
+    background-position: center;
+    background-size: cover;
 }
 

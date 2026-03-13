@@ -31,21 +31,7 @@ function init() {
 //     }
 // }
 
-function showAnswers() {
-    let answerOne = selectedQuiz[currentQuestion];
-    let answerTwo = selectedQuiz[currentQuestion];
-    let answerThree = selectedQuiz[currentQuestion];
-    let answerFour = selectedQuiz[currentQuestion];
-    let answerOneRef = document.getElementById("answer_1");
-    let answerTwoRef = document.getElementById("answer_2");
-    let answerThreeRef = document.getElementById("answer_3");
-    let answerFourRef = document.getElementById("answer_4");
 
-    answerOneRef.innerHTML = answerOne["answer_1"];
-    answerTwoRef.innerHTML = answerTwo["answer_2"];
-    answerThreeRef.innerHTML = answerThree["answer_3"];
-    answerFourRef.innerHTML = answerFour["answer_4"];
-}
 
 function clickAnswer(i) {
     let question = selectedQuiz[currentQuestion];

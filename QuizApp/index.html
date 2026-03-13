@@ -25,6 +25,8 @@
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
 
+    <link rel="icon" type="image/x-icon" href="./assets/img/icons/logo.png">
+
 </head>
 
 <body>
@@ -57,7 +59,11 @@
                 </div>
 
                 <div class="select_quiz_content">
-                    <h2>Wähle ein Quiz!</h2>
+
+                    <div class="select_quiz_content_text">
+                        <h2>Wie gut kennst du Musiker?</h2>
+                        <h3>Wähle ein Quiz!</h3>
+                    </div>
 
                     <button onclick="loadAndStartQuiz()" id="button_start_quiz_id" disabled type="button"
                         class="btn btn-secondary btn-lg">Start Quiz</button>
@@ -79,13 +85,11 @@
             </div>
 
             <!-- QUESTIONS -->
-            <div class="card-body" id="quiz_body" style="display: none;">
-
-                
+            <div class="card-body card_question_background_img" id="quiz_body" style="display: none;">
 
                 <section class="questions_style">
                     <h5 class="card-title" id="questionText">Frage</h5>
-                    
+
                     <div class="card mb-2 card_answer_style" onclick="clickAnswer('answer_1')">
                         <div class="card-body" id="answer_1">
                             Antwort

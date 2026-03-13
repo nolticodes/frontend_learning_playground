@@ -1,6 +1,8 @@
 let allQuizes = ["quiz_navbar_text_1", "quiz_navbar_text_2", "quiz_navbar_text_3", "quiz_navbar_text_4"];
 let selectedQuiz = 0; 
 let currentQuestion = 0;
+let selectedQuizImage = ""
+
 
 function activateStartButton(id) {
     document.getElementById("button_start_quiz_id").disabled = false;
@@ -11,6 +13,7 @@ function activateStartButton(id) {
 
     selectedQuiz = allQuizData[id]; 
     currentQuestion = 0;
+    selectedQuizImage = allImageData[id];
 }
 
 function loadAndStartQuiz() {
@@ -20,7 +23,7 @@ function loadAndStartQuiz() {
     document.getElementById("questions_counter_all").innerHTML = selectedQuiz.length;
     showQuestion();
     showAnswers();
-
+    showImage();
 }
 
 function showQuestion() {
@@ -42,3 +45,23 @@ function showQuestion() {
     }
 }
 
+function showAnswers() {
+    let answerOne = selectedQuiz[currentQuestion];
+    let answerTwo = selectedQuiz[currentQuestion];
+    let answerThree = selectedQuiz[currentQuestion];
+    let answerFour = selectedQuiz[currentQuestion];
+    let answerOneRef = document.getElementById("answer_1");
+    let answerTwoRef = document.getElementById("answer_2");
+    let answerThreeRef = document.getElementById("answer_3");
+    let answerFourRef = document.getElementById("answer_4");
+
+    answerOneRef.innerHTML = answerOne["answer_1"];
+    answerTwoRef.innerHTML = answerTwo["answer_2"];
+    answerThreeRef.innerHTML = answerThree["answer_3"];
+    answerFourRef.innerHTML = answerFour["answer_4"];
+}
+
+function showImage() {
+    let quizBodyImage = document.getElementById("quiz_body")
+    quizBodyImage.style = `background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url(${selectedQuizImage})`;
+}
