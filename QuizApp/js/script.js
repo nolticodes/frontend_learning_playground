@@ -60,5 +60,13 @@ function abortGameAndLoadStartscreen() {
     questionsRightAnswered = 0;
 }
 
+function clickRestartGameBtn() {
+    questionsRightAnswered = 0;
+    currentQuestion = 0;
+    resetColorAnswerButtons();
+    showQuestion();
+    showAnswers(); 
+}
+
 
 
