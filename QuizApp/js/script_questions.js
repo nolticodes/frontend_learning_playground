@@ -184,3 +184,10 @@ const allImageData = {
     quiz_navbar_text_3: "./assets/img/makko.png",
     quiz_navbar_text_4: "./assets/img/yung_hurn.png",
 };
+
+const allMusicansData = {
+    quiz_navbar_text_1: "Kanye West",
+    quiz_navbar_text_2: "Souly",
+    quiz_navbar_text_3: "Makko",
+    quiz_navbar_text_4: "Yung Hurn",
+};

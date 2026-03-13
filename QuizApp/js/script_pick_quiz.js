@@ -2,6 +2,7 @@ let allQuizes = ["quiz_navbar_text_1", "quiz_navbar_text_2", "quiz_navbar_text_3
 let selectedQuiz = 0; 
 let currentQuestion = 0;
 let selectedQuizImage = ""
+let selectedQuizText = ""
 
 
 function activateStartButton(id) {
@@ -10,10 +11,11 @@ function activateStartButton(id) {
         document.getElementById(allQuizes[i]).style = "color: grey";
     }
     document.getElementById(id).style = "color: white";   
-
     selectedQuiz = allQuizData[id]; 
     currentQuestion = 0;
     selectedQuizImage = allImageData[id];
+    selectedQuizText = allMusicansData[id];
+    document.getElementById("selected_quiz_text").innerHTML = selectedQuizText;
 }
 
 function loadAndStartQuiz() {
