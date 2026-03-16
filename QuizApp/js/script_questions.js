@@ -44,44 +44,44 @@ let quiz_navbar_text_1 = [
 
 let quiz_navbar_text_2 = [
     {
-        "question": "Wie ist der Vorname von Kanye West?!",
-        "answer_1": "Ye",
-        "answer_2": "West",
-        "answer_3": "North",
-        "answer_4": "Kanye",
-        "right_answer": 4
-    },
-    {
-        "question": "Wie ist der Nachname von Kanye West?!",
-        "answer_1": "North",
-        "answer_2": "West",
-        "answer_3": "East",
-        "answer_4": "South",
-        "right_answer": 2
-    },
-    {
-        "question": "Welches Lied ist von Kanye West?!",
-        "answer_1": "Circles",
-        "answer_2": "Shabbabs Botten",
-        "answer_3": "Burn",
-        "answer_4": "Battlefield Freestyle",
-        "right_answer": 3
-    },
-    {
-        "question": "Wie heißt die Modemarke von Kanye West?!",
-        "answer_1": "Yeezy",
-        "answer_2": "Kanye",
-        "answer_3": "Kanye West",
-        "answer_4": "Ye",
+        "question": "Wie heißt das neueste Album Souly?",
+        "answer_1": "Moth Music",
+        "answer_2": "Motten Musik",
+        "answer_3": "Bossbaby Tape",
+        "answer_4": "traence",
         "right_answer": 1
     },
     {
-        "question": "Wie heißt die Frau von Kanye West?!",
-        "answer_1": "Kim",
-        "answer_2": "Kanye",
-        "answer_3": "Bianca",
-        "answer_4": "Taylor",
+        "question": "Mit welchem dieser Musiker hat Souly ein Feature?",
+        "answer_1": "Kanye",
+        "answer_2": "Makko",
+        "answer_3": "Symba",
+        "answer_4": "Mac Miller",
+        "right_answer": 2
+    },
+    {
+        "question": "Welches Lied ist von Souly?",
+        "answer_1": "Lonely",
+        "answer_2": "Congratulations",
+        "answer_3": "Burn",
+        "answer_4": "Battlefield Freestyle",
+        "right_answer": 1
+    },
+    {
+        "question": "Für was ist Souly neben seiner Musik bekannt?",
+        "answer_1": "Backen",
+        "answer_2": "Gar nichts",
+        "answer_3": "Fashion",
+        "answer_4": "Kaffee rösten",
         "right_answer": 3
+    },
+    {
+        "question": "Wen pusht Souly am meisten in seinen Songs?",
+        "answer_1": "Sein Heimatland",
+        "answer_2": "Sein Label",
+        "answer_3": "Sich selbst",
+        "answer_4": "Freunde und Familie",
+        "right_answer": 4
     },
 ];
 
