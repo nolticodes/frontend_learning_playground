@@ -1,0 +1,148 @@
+*{
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    margin: 0;
+    font-family: "Sour Gummy", sans-serif;
+
+}
+
+/* STANDARD STYLE WEBSITE  */
+
+.style_header {
+    height: 80px;
+    padding-left: 120px;
+    padding-right: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.style_main {
+    padding: 40px 120px;
+    padding-top: 24px;
+}
+
+.style_new_notes_section {
+    background-color: rgb(231 223 169);
+    padding: 16px;
+    border-radius: 16px;
+}
+
+.style_new_notes_section_header {
+    height: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* STYLE NOTES */
+
+.notes_style {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 250px;
+    height: 250px;
+    background-color: white;
+    border-radius: 16px;
+}
+
+.notes_style_header {
+    height: 20%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: underline;
+}
+
+.notes_style_main {
+    height: 60%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 8px;
+}
+
+.notes_style_footer {
+    height: 20%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 16px;
+}
+
+.notes_style_footer button {
+    background-color: rgb(231 223 169);
+    border: none;
+    border-radius: 8px;
+    height: 32px;
+    width: 32px;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input_section {
+    display: flex;
+    width: 100%;
+    gap: 16px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.style_input {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+}
+
+.style_input h3 {
+    padding-bottom: 8px;
+}
+
+.input_section input {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    background-color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0 8px;
+    flex: 1;
+    line-height: 32px;
+    
+}
+
+.style_section_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 56px;
+}
+
+.style_section_button button {
+    width: 40%;
+    height: 32px;
+    border: none;
+    border-radius: 8px;
+    background-color: white;
+    font-weight: bold;
+}
+
+.style_section_button button:hover {
+    cursor: pointer;
+}
+
+.style_current_notes_section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 16px 16px 
+}

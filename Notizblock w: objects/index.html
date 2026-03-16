@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notizblock</title>
+
+    <script defer src="./script.js"></script>
+
+    <link rel="stylesheet" href="./style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</head>
+<body onload="init()">
+
+    <header class="style_header">
+        <h1>Notizblock</h1>
+    </header>
+    
+    <section class="style_main">
+        <div class="style_new_notes_section">
+
+            <header class="style_new_notes_section_header">
+                <h2>Neue Notiz</h2>
+            </header>
+
+            <div class="input_section">
+                <div class="style_input">
+                    <h3>Titel</h3>
+                    <input id="note_title_input" type="text">
+                </div>
+                
+                <div class="style_input">
+                    <h3>Notiz</h3>
+                    <input id="note_input" type="text"> 
+                </div>
+            </div>
+
+            <div class="style_section_button">
+                <button  onclick="addNote()">Notiz hinzufügen</button>
+            </div>
+
+        </div>
+    </section >
+
+    <section class="style_main">
+
+        <div class="style_new_notes_section">
+
+            <div class="style_new_notes_section_header">
+                <h2>Notizen</h2>
+            </div>            
+
+            <div class="style_current_notes_section" id="content">
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="style_main">
+
+        <div class="style_new_notes_section">
+
+            <div class="style_new_notes_section_header">
+                <h2>Mülleimer</h2>
+            </div>
+
+            <div class="style_current_notes_section" id="trash_content"></div>
+        </div>
+
+    </section>
+
+    
+</body>
+</html>
