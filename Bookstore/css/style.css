@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+/* CONTENTBEGRENZUNG */
+header {
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    width: 100%;
+    height: calc(100dvh - 240px);
+    display: flex;
+    justify-content: center;
+}
+
+footer {
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+}
+
+.header_content {
+    max-width: 1920px;
+    width: 100%;
+    height: 100%;
+    background-color: blue;
+}
+
+.main_content {
+    max-width: 1920px;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+}
+
+.footer_content {
+    max-width: 1920px;
+    width: 100%;
+    height: 100%;
+    background-color: blue;
+}
