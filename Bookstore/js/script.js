@@ -29,12 +29,12 @@ function likeButton(i) {
         likeCounterRef.innerHTML = Number(likeCounterRef.innerHTML) - 1;
         books[i].liked = false;
         document.getElementById(`heart_full_id_${i}`).style = "display: none";
-        document.getElementById(`heart_empty_id_${i}`).style = ""
+        document.getElementById(`heart_empty_id_${i}`).style = "";
     } else {
         likeCounterRef.innerHTML = Number(likeCounterRef.innerHTML) + 1;
         books[i].liked = true;
         document.getElementById(`heart_full_id_${i}`).style = "";
-        document.getElementById(`heart_empty_id_${i}`).style = "display: none"
+        document.getElementById(`heart_empty_id_${i}`).style = "display: none";
     }
 }
 

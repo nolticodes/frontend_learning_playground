@@ -18,23 +18,23 @@ function getTemplateBookStatsHTML(i) {
 
                     <div class="book_infobox_main_header">
                         <h3>${books[i].price.toFixed(2)} €</h3>
-                        <div class="book_infobox_main_header_likes" id="like_img_id_${[i]}">
-                            <h4 id="like_counter_id_${[i]}">${books[i].likes}</h4>
+                        <div class="book_infobox_main_header_likes" id="like_img_id_${i}">
+                            <h4 id="like_counter_id_${i}">${books[i].likes}</h4>
                             
                         </div>
                     </div>
 
                     <table class="book_infobox_main_stats">
                         <tr>
-                            <td class="table_title">AUTHOR:</td>
+                            <td class="table_title">Author:</td>
                             <td class="table_value" id="book_infobox_author_id">${books[i].author}</td>
                         </tr>
                         <tr>
-                            <td class="table_title">ERSCHEINUNGSJAHR:</td>
+                            <td class="table_title">Erscheinungsjahr:</td>
                             <td class="table_value" id="book_infobox_year_id">${books[i].publishedYear}</td>
                         </tr>
                         <tr>
-                            <td class="table_title">GENRE:</td>
+                            <td class="table_title">Genre:</td>
                             <td class="table_value" id="book_infobox_genre_id">${books[i].genre}</td>
                         </tr>
                     </table>
@@ -43,7 +43,7 @@ function getTemplateBookStatsHTML(i) {
                     </div>
 
                     <div class="book_infobox_main_comments_section"> 
-                        <h2 id="book_infobox_comment_id${[i]}" class="book_infobox_main_comments">Kommentare:</h2>
+                        <h2 id="book_infobox_comment_id${i}" class="book_infobox_main_comments">Kommentare:</h2>
                     </div>
 
                     <div class="border_line">
@@ -70,10 +70,10 @@ function getTemplateBookCommentsHTML(i, j) {
 
 function getTemplateLikeButtonLikedHTML(i) {
     return `<img id="heart_full_id_${i}" onclick="likeButton(${i})" src="./assets/img/buttons/heart_full.png">
-            <img id="heart_empty_id_${i}" onclick="likeButton(${i})" src="./assets/img/buttons/heart_empty.png" style="display:none">`
+            <img id="heart_empty_id_${i}" onclick="likeButton(${i})" src="./assets/img/buttons/heart_empty.png" style="display: none">`
 }
 
 function getTemplateLikeButtonNotLikedHTML(i) {
     return `<img id="heart_empty_id_${i}" onclick="likeButton(${i})" src="./assets/img/buttons/heart_empty.png">
-            <img id="heart_full_id_${i}" onclick="likeButton(${i})" src="./assets/img/buttons/heart_full.png" style="display:none"`
+            <img id="heart_full_id_${i}" onclick="likeButton(${i})" src="./assets/img/buttons/heart_full.png" style="display: none">`
 }
