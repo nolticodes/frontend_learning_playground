@@ -1,6 +1,5 @@
 *{
     box-sizing: border-box;
-    overflow: hidden;
 }
 
 .border_line {
@@ -14,6 +13,7 @@
     height: 720px;
     background-color: green;
     border-radius: 16px;
+    overflow: hidden;
 }
 
 .book_infobox_header {
@@ -28,7 +28,7 @@
 
 .book_infobox_main {
     width: 100%;
-    height: 100%;
+    height: 85%;
     background-color: yellow;
 }
 
