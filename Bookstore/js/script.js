@@ -18,10 +18,14 @@ function renderBooks() {
 function likeButton(i) {
     let likeCounterRef = document.getElementById(`like_counter_id_${i}`);
     if(books[i].liked == true){
-        likeCounterRef.innerHTML = likeCounterRef.innerHTML - 1;
+        likeCounterRef.innerHTML = Number(likeCounterRef.innerHTML) - 1;
         books[i].liked = false;
+        document.getElementById(`heart_full_id_${[i]}`).style = "display: none";
+        document.getElementById(`heart_empty_id_${[i]}`).style = ""
     } else {
-        likeCounterRef.innerHTML = likeCounterRef.innerHTML + 1;
+        likeCounterRef.innerHTML = Number(likeCounterRef.innerHTML) + 1;
         books[i].liked = true;
+        document.getElementById(`heart_full_id_${[i]}`).style = "";
+        document.getElementById(`heart_empty_id_${[i]}`).style = "display: none"
     }
 }

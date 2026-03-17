@@ -20,7 +20,8 @@ function getTemplateBookStatsHTML(i) {
                         <h3>${books[i].price.toFixed(2)} €</h3>
                         <div class="book_infobox_main_header_likes">
                             <h4 id="like_counter_id_${[i]}">${books[i].likes}</h4>
-                            <img onclick="likeButton(${[i]})" src="./assets/img/buttons/heart_full.png">
+                            <img id="heart_full_id_${[i]}" onclick="likeButton(${[i]})" src="./assets/img/buttons/heart_full.png">
+                            <img id="heart_empty_id_${[i]}" onclick="likeButton(${[i]})" src="./assets/img/buttons/heart_empty.png" style="display: none;">
                         </div>
                     </div>
 
@@ -48,6 +49,14 @@ function getTemplateBookStatsHTML(i) {
 
                     <div class="border_line">
                     </div>
+
+
+                    <div class="book_infobox_send_comment_section">
+                        <input type="text" placeholder="moin">
+                        <img src="./assets/img/buttons/send.png">
+                    </div>
+
+
                 </div>
 
 
@@ -59,7 +68,7 @@ function getTemplateBookCommentsHTML(i, j) {
         <table class="book_infobox_main_comments_table">
             <tr>
                 <td class="table_title_comment">${books[i].comments[j].name}:</td>
-                <td class="table_value_comment">${books[i].comments[j].comment}:</td>
+                <td class="table_value_comment">${books[i].comments[j].comment}</td>
             </tr>
         </table>
             `

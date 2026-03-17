@@ -123,3 +123,30 @@
     font-size: 16px;
 }
 
+.book_infobox_send_comment_section {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    gap: 8px;
+    padding: 16px 20px;
+}
+
+.book_infobox_send_comment_section input {
+    flex: 1;
+    border: none;
+    border-radius: 8px;
+    padding-left: 8px;
+    padding-right: 8px;
+    line-height: 24px;
+}
+
+.book_infobox_send_comment_section img {
+    width: 32px;
+    object-fit: contain;
+}
+
+.book_infobox_send_comment_section img:hover {
+    cursor: pointer;
+}
