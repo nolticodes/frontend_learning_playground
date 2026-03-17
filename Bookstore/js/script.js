@@ -12,6 +12,14 @@ function renderBooks() {
         for (j = 0; j < books[i].comments.length; j++){
             bookCommentRef.innerHTML += getTemplateBookCommentsHTML(i, j)
         }
+        let likeStatusRef = document.getElementById(`like_img_id_${i}`)
+        if(books[i].liked == true){
+            likeStatusRef.innerHTML += `<img id="heart_full_id_${i}" onclick="likeButton(${i})" src="./assets/img/buttons/heart_full.png">
+                                        <img id="heart_empty_id_${i}" onclick="likeButton(${i})" src="./assets/img/buttons/heart_empty.png" style="display:none">`
+        } else {
+            likeStatusRef.innerHTML += `<img id="heart_empty_id_${i}" onclick="likeButton(${i})" src="./assets/img/buttons/heart_empty.png">
+                                        <img id="heart_full_id_${i}" onclick="likeButton(${i})" src="./assets/img/buttons/heart_full.png" style="display:none"`
+        }
     }
 }
 
@@ -20,12 +28,12 @@ function likeButton(i) {
     if(books[i].liked == true){
         likeCounterRef.innerHTML = Number(likeCounterRef.innerHTML) - 1;
         books[i].liked = false;
-        document.getElementById(`heart_full_id_${[i]}`).style = "display: none";
-        document.getElementById(`heart_empty_id_${[i]}`).style = ""
+        document.getElementById(`heart_full_id_${i}`).style = "display: none";
+        document.getElementById(`heart_empty_id_${i}`).style = ""
     } else {
         likeCounterRef.innerHTML = Number(likeCounterRef.innerHTML) + 1;
         books[i].liked = true;
-        document.getElementById(`heart_full_id_${[i]}`).style = "";
-        document.getElementById(`heart_empty_id_${[i]}`).style = "display: none"
+        document.getElementById(`heart_full_id_${i}`).style = "";
+        document.getElementById(`heart_empty_id_${i}`).style = "display: none"
     }
 }

@@ -18,10 +18,9 @@ function getTemplateBookStatsHTML(i) {
 
                     <div class="book_infobox_main_header">
                         <h3>${books[i].price.toFixed(2)} €</h3>
-                        <div class="book_infobox_main_header_likes">
+                        <div class="book_infobox_main_header_likes" id="like_img_id_${[i]}">
                             <h4 id="like_counter_id_${[i]}">${books[i].likes}</h4>
-                            <img id="heart_full_id_${[i]}" onclick="likeButton(${[i]})" src="./assets/img/buttons/heart_full.png">
-                            <img id="heart_empty_id_${[i]}" onclick="likeButton(${[i]})" src="./assets/img/buttons/heart_empty.png" style="display: none;">
+                            
                         </div>
                     </div>
 
