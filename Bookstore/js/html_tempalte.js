@@ -49,16 +49,11 @@ function getTemplateBookStatsHTML(i) {
                     <div class="border_line">
                     </div>
 
-
                     <div class="book_infobox_send_comment_section">
                         <input type="text" placeholder="moin">
                         <img src="./assets/img/buttons/send.png">
                     </div>
-
-
                 </div>
-
-
             </div>`
 }
 
@@ -71,4 +66,14 @@ function getTemplateBookCommentsHTML(i, j) {
             </tr>
         </table>
             `
+}
+
+function getTemplateLikeButtonLikedHTML(i) {
+    return `<img id="heart_full_id_${i}" onclick="likeButton(${i})" src="./assets/img/buttons/heart_full.png">
+            <img id="heart_empty_id_${i}" onclick="likeButton(${i})" src="./assets/img/buttons/heart_empty.png" style="display:none">`
+}
+
+function getTemplateLikeButtonNotLikedHTML(i) {
+    return `<img id="heart_empty_id_${i}" onclick="likeButton(${i})" src="./assets/img/buttons/heart_empty.png">
+            <img id="heart_full_id_${i}" onclick="likeButton(${i})" src="./assets/img/buttons/heart_full.png" style="display:none"`
 }

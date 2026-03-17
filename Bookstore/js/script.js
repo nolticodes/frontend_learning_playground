@@ -14,14 +14,14 @@ function renderBooks() {
         }
         let likeStatusRef = document.getElementById(`like_img_id_${i}`)
         if(books[i].liked == true){
-            likeStatusRef.innerHTML += `<img id="heart_full_id_${i}" onclick="likeButton(${i})" src="./assets/img/buttons/heart_full.png">
-                                        <img id="heart_empty_id_${i}" onclick="likeButton(${i})" src="./assets/img/buttons/heart_empty.png" style="display:none">`
+            likeStatusRef.innerHTML += getTemplateLikeButtonLikedHTML(i)
         } else {
-            likeStatusRef.innerHTML += `<img id="heart_empty_id_${i}" onclick="likeButton(${i})" src="./assets/img/buttons/heart_empty.png">
-                                        <img id="heart_full_id_${i}" onclick="likeButton(${i})" src="./assets/img/buttons/heart_full.png" style="display:none"`
+            likeStatusRef.innerHTML += getTemplateLikeButtonNotLikedHTML(i)
         }
     }
 }
+
+//LIKE BUTTON RENDERING IN TEMPLATE FUNKTION
 
 function likeButton(i) {
     let likeCounterRef = document.getElementById(`like_counter_id_${i}`);
@@ -37,3 +37,4 @@ function likeButton(i) {
         document.getElementById(`heart_empty_id_${i}`).style = "display: none"
     }
 }
+
