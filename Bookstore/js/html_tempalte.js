@@ -42,8 +42,22 @@ function getTemplateBookStatsHTML(i) {
                     <div class="border_line">
                     </div>
 
+                    <div class="book_infobox_main_comments_section"> 
+                        <h2 id="book_infobox_comment_id${[i]}" class="book_infobox_main_comments">Kommentare:</h2>
+                    </div>
                 </div>
 
 
             </div>`
+}
+
+function getTemplateBookCommentsHTML(i, j) {
+    return`
+        <table class="book_infobox_main_comments_table">
+            <tr>
+                <td class="table_title_comment">${books[i].comments[j].name}:</td>
+                <td class="table_value_comment">${books[i].comments[j].comment}:</td>
+            </tr>
+        </table>
+            `
 }

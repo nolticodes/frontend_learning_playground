@@ -9,7 +9,7 @@
 }
 
 .book_infobox {
-    width: 360px;
+    width: 400px;
     height: 720px;
     background-color: green;
     border-radius: 16px;
@@ -24,6 +24,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    padding: 0px 16px;
 }
 
 .book_infobox_main {
@@ -48,7 +49,7 @@
 }
 
 .book_infobox_main_header {
-    padding: 40px 20px;
+    padding: 20px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -86,6 +87,26 @@
     font-size: 16px;
 }
 
+.book_infobox_main_comments_section {
+    height: 30%;
+}
+
 .book_infobox_main_comments {
     padding: 20px 20px;
 }
+
+.book_infobox_main_comments_table td {
+    vertical-align: top;
+}
+
+.table_title_comment {
+    font-weight: bold;
+    font-size: 16px;
+    width: 120px;
+}
+
+.table_value_comment {
+    font-weight: normal;
+    font-size: 16px;
+}
+
