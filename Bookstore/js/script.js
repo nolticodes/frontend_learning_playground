@@ -14,3 +14,14 @@ function renderBooks() {
         }
     }
 }
+
+function likeButton(i) {
+    let likeCounterRef = document.getElementById(`like_counter_id_${i}`);
+    if(books[i].liked == true){
+        likeCounterRef.innerHTML = likeCounterRef.innerHTML - 1;
+        books[i].liked = false;
+    } else {
+        likeCounterRef.innerHTML = likeCounterRef.innerHTML + 1;
+        books[i].liked = true;
+    }
+}

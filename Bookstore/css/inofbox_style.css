@@ -65,8 +65,19 @@
 
 .book_infobox_main_header_likes {
     display: flex;
-    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
 }
+
+.book_infobox_main_header_likes img {
+    object-fit: cover;
+    width: 32px;
+}
+
+.book_infobox_main_header_likes img:hover {
+    cursor: pointer;
+} 
 
 .book_infobox_main_stats {
     padding: 0px 20px; 
@@ -89,7 +100,6 @@
 
 .book_infobox_main_comments_section {
     height: 35%;
-    
 }
 
 .book_infobox_main_comments {
@@ -105,7 +115,7 @@
 .table_title_comment {
     font-weight: bold;
     font-size: 16px;
-    width: 120px;
+    width: 150px;
 }
 
 .table_value_comment {
