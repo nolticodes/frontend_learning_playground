@@ -88,11 +88,14 @@
 }
 
 .book_infobox_main_comments_section {
-    height: 30%;
+    height: 35%;
+    
 }
 
 .book_infobox_main_comments {
     padding: 20px 20px;
+    height: 100%;
+    overflow-y: auto;
 }
 
 .book_infobox_main_comments_table td {
