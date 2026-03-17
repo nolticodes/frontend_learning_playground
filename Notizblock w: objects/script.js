@@ -4,6 +4,15 @@ let notes = [];
 let trashNotesTitle = [];
 let trashNotes = []
 
+let allNotes = {
+    "notesTitles": [],
+    "notes": [],
+    "trashNotesTitles": [],
+    "trashNotes": [],
+}
+
+
+
 // START
 function init() {
     getTitleNotesFromLocalStorage();
@@ -15,13 +24,20 @@ function init() {
 }
 
 
-// render Notes to HTML
-// 1. NOTES
+function moveNote (indexNote, startKey, destinationKey) {
+    let trashNote = allNotes[startKey].splice(indexNote, 1);
+    let trashTitleNote = allNotes[startKey + "Titles"].splice(indexNote, 1);
+   
+    allNotes[destinationKey].push(trashNote);
+    allNotes[destinationKey + "Titles"].push(trashTitleNote);
+}
+
+
 function renderNotes() {
     let contentRef = document.getElementById("content");
     contentRef.innerHTML = "";
 
-    for (let indexNote = 0; indexNote < notes.length; indexNote++) {
+    for (let indexNote = 0; indexNote < allNotes.notes.length; indexNote++) {
         contentRef.innerHTML += getNoteTemplate(indexNote);  
     }
 }
@@ -33,14 +49,14 @@ function renderNotes() {
 function getNoteTemplate(indexNote) {
     return `<div class="notes_style">
                 <div class="notes_style_header">
-                    <h2>${notesTitle[indexNote]}</h2>
+                    <h2>${allNotes.notesTitles[indexNote]}</h2>
                 </div>
                 
                 <div class="notes_style_main">
-                    <p>${notes[indexNote]}</p>
+                    <p>${allNotes.notes[indexNote]}</p>
                 </div>
                 <div class="notes_style_footer">
-                    <button onclick="moveToTrash(${indexNote})" class="button_archive_delete">X</button>
+                    <button onclick="moveNote(${indexNote}, "notes", "trashNotes")" class="button_archive_delete">X</button>
                 </div>
             </div>`
 }
@@ -53,7 +69,7 @@ function renderTrashNotes() {
     let trashContentRef = document.getElementById("trash_content");
     trashContentRef.innerHTML = "";
 
-    for (let indexTrashNote = 0; indexTrashNote < trashNotes.length; indexTrashNote++) {
+    for (let indexTrashNote = 0; indexTrashNote < allNotes.trashNotes.length; indexTrashNote++) {
         trashContentRef.innerHTML += getTrashNoteTemplate(indexTrashNote);  
     }
 }
@@ -61,11 +77,11 @@ function renderTrashNotes() {
 function getTrashNoteTemplate(indexTrashNote) {
     return `<div class="notes_style">
                 <div class="notes_style_header">
-                    <h2>${trashNotesTitle[indexTrashNote]}</h2>
+                    <h2>${allNotes.trashNotesTitles[indexTrashNote]}</h2>
                 </div>
                 
                 <div class="notes_style_main">
-                    <p>${trashNotes[indexTrashNote]}</p>
+                    <p>${allNotes.trashNotes[indexTrashNote]}</p>
                 </div>
                 <div class="notes_style_footer">
                     <button onclick="deleteNote(${indexTrashNote})" class="button_archive_delete">X</button>
@@ -74,16 +90,14 @@ function getTrashNoteTemplate(indexTrashNote) {
 }
 
 
-
-
 // Add Notes
 function addNote() {
     let noteInputRef = document.getElementById("note_input");
     let noteTitleInputRef = document.getElementById("note_title_input");
 
     if(noteInputRef.value != "" && noteTitleInputRef.value != ""){
-        notesTitle.push(noteTitleInputRef.value);
-        notes.push(noteInputRef.value);
+        allNotes.notesTitles.push(noteTitleInputRef.value);
+        allNotes.notes.push(noteInputRef.value);
     }
     saveTitleNotesToLocalStorage();
     saveNotesToLocalStorage();
