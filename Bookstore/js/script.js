@@ -1,6 +1,8 @@
+let commentsInLocalStorage = []; 
 
 function init() {
-    renderBooks()
+    getBooksFromLocalStorage();
+    renderBooks();
 }
 
 function renderBooks() {
@@ -49,6 +51,7 @@ function likeButton(i) {
         document.getElementById(`heart_full_id_${i}`).style = "";
         document.getElementById(`heart_empty_id_${i}`).style = "display: none";
     }
+    saveNewBooksArray()
 }
 
 // Add Comment
@@ -61,6 +64,7 @@ function addComment(i) {
         commmentInputRef.value = ""
     }
     renderCommentsCurrentBook(i);
+    saveNewBooksArray()
 }
 
 function renderCommentsCurrentBook(i) {
@@ -74,27 +78,20 @@ function getNewCommentsArea(i) {
     for(j = 0; j < books[i].comments.length; j++){
         newComments += getTemplateBookCommentsHTML(i, j)
     } 
-    return newComments
+    return newComments;
 }
 
 // Save Comment to local Storage
-// let localStorageComments = JSON.parse(localStorage.getItem("commentsList"))
+function saveNewBooksArray() {
+    localStorage.setItem("newBooks", JSON.stringify(books))
+}
 
-// function saveCommentToLocalStorage(i) {
-//     localStorage.setItem("commentsList", JSON.stringify(books[i].comments))
-// }
-
-// function getCommentsFromLocalStorage(i) {
-//     if (localStorageComments === null) {
-//         books[i].comments
-//     } else {
-//         books[i].comments = localStorageComments
-//     }
-// }
-
-// Render Comments
-
-// Save Like Status to loval Storage
-
-// Render Like Status
+function getBooksFromLocalStorage() {
+    let booksFromLocalStorage = JSON.parse(localStorage.getItem("newBooks"));
+    if (booksFromLocalStorage === null) {
+        books
+    } else {
+        books = booksFromLocalStorage
+    }
+}
 
