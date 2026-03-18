@@ -5,6 +5,7 @@ function init() {
 
 function renderBooks() {
     let bookInfoboxRef = document.getElementById("section_book_infobox_id");
+    bookInfoboxRef.innerHTML = "";
 
     for (i = 0; i < books.length; i++) {
         bookInfoboxRef.innerHTML += getTemplateBookStatsHTML(i)
@@ -44,15 +45,30 @@ function addComment(i) {
         books[i].comments.push(commmentInputRef.value);
         commmentInputRef = ""
     }
-    saveCommentToLocalStorage();
+    saveCommentToLocalStorage(i);
+    getCommentsFromLocalStorage(i);
     renderBooks();
 }
 
 // Kommentar in localSotrage speichern
+let localStorageComments = JSON.parse(localStorage.getItem("commentsList"))
 
-funczion saveCommentToLocalStorage() {
-
+function saveCommentToLocalStorage(i) {
+    localStorage.setItem("commentsList", JSON.stringify(books[i].comments))
 }
+
+function getCommentsFromLocalStorage(i) {
+    if(localStorageComments === null) {
+        books[i].comments
+    } else {
+        books[i].comments = localStorageComments
+    }
+}
+
+
+
+
+
 
 // Kommentare rendern
 
