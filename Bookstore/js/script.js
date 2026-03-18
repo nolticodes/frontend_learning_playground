@@ -9,7 +9,13 @@ function renderBooks() {
 
     for (i = 0; i < books.length; i++) {
         bookInfoboxRef.innerHTML += getTemplateBookStatsHTML(i)
-        let bookCommentRef = document.getElementById(`book_infobox_comment_id${i}`);
+        setCommentArea(i)
+        setLikeArea(i);
+    }
+}
+
+function setCommentArea(i) {
+    let bookCommentRef = document.getElementById(`book_infobox_comment_id${i}`);
         if (books[i].comments.length > 0) {
             for (j = 0; j < books[i].comments.length; j++) {
                 bookCommentRef.innerHTML += getTemplateBookCommentsHTML(i, j)
@@ -17,8 +23,6 @@ function renderBooks() {
         } else {
             bookCommentRef.innerHTML += "Bisher keine Kommentare"
         }
-        setLikeArea(i);
-    }
 }
 
 function setLikeArea(i) {
@@ -58,7 +62,7 @@ function addComment(i) {
     saveCommentToLocalStorage(i);
     getCommentsFromLocalStorage(i);
     renderCommentsCurrentBook(i);
-    
+
 }
 
 function renderCommentsCurrentBook(i) {
