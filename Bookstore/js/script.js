@@ -37,7 +37,7 @@ function likeButton(i) {
     }
 }
 
-// Kommentar hinzufügen
+// Add Comment
 function addComment(i) {
     let commmentInputRef = document.getElementById(`comment_input_id_${i}`);
 
@@ -50,7 +50,7 @@ function addComment(i) {
     renderBooks();
 }
 
-// Kommentar in localSotrage speichern
+// Save Comment to local Storage
 let localStorageComments = JSON.parse(localStorage.getItem("commentsList"))
 
 function saveCommentToLocalStorage(i) {
@@ -65,14 +65,9 @@ function getCommentsFromLocalStorage(i) {
     }
 }
 
+// Render Comments
 
+// Save Like Status to loval Storage
 
-
-
-
-// Kommentare rendern
-
-// Like Status in localStorage speichern
-
-// Like Status rendern 
+// Render Like Status
 
