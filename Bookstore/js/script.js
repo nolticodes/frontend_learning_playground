@@ -70,7 +70,6 @@ function addComment(i) {
 function renderCommentsCurrentBook(i) {
     let currentCommentRef = document.getElementById(`book_infobox_comment_id${i}`)
     currentCommentRef.innerHTML = getNewCommentsArea(i) 
-    
 }
 
 function getNewCommentsArea(i) {
@@ -81,7 +80,7 @@ function getNewCommentsArea(i) {
     return newComments;
 }
 
-// Save Comment to local Storage
+// Save New Books Array to local Storage
 function saveNewBooksArray() {
     localStorage.setItem("newBooks", JSON.stringify(books))
 }
