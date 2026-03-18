@@ -56,33 +56,41 @@ function addComment(i) {
     let commmentInputRef = document.getElementById(`comment_input_id_${i}`);
 
     if (commmentInputRef.value != "") {
-        books[i].comments.push(commmentInputRef.value);
-        commmentInputRef = ""
+        books[i].comments.push({"name": "Anonym",
+                                "comment": commmentInputRef.value});
+        commmentInputRef.value = ""
     }
-    saveCommentToLocalStorage(i);
-    getCommentsFromLocalStorage(i);
     renderCommentsCurrentBook(i);
-
 }
 
 function renderCommentsCurrentBook(i) {
     let currentCommentRef = document.getElementById(`book_infobox_comment_id${i}`)
+    currentCommentRef.innerHTML = getNewCommentsArea(i) 
+    
+}
+
+function getNewCommentsArea(i) {
+    let newComments = ""
+    for(j = 0; j < books[i].comments.length; j++){
+        newComments += getTemplateBookCommentsHTML(i, j)
+    } 
+    return newComments
 }
 
 // Save Comment to local Storage
-let localStorageComments = JSON.parse(localStorage.getItem("commentsList"))
+// let localStorageComments = JSON.parse(localStorage.getItem("commentsList"))
 
-function saveCommentToLocalStorage(i) {
-    localStorage.setItem("commentsList", JSON.stringify(books[i].comments))
-}
+// function saveCommentToLocalStorage(i) {
+//     localStorage.setItem("commentsList", JSON.stringify(books[i].comments))
+// }
 
-function getCommentsFromLocalStorage(i) {
-    if (localStorageComments === null) {
-        books[i].comments
-    } else {
-        books[i].comments = localStorageComments
-    }
-}
+// function getCommentsFromLocalStorage(i) {
+//     if (localStorageComments === null) {
+//         books[i].comments
+//     } else {
+//         books[i].comments = localStorageComments
+//     }
+// }
 
 // Render Comments
 
