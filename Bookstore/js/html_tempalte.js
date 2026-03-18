@@ -50,8 +50,8 @@ function getTemplateBookStatsHTML(i) {
                     </div>
 
                     <div class="book_infobox_send_comment_section">
-                        <input type="text" placeholder="moin">
-                        <img src="./assets/img/buttons/send.png">
+                        <input id="comment_input_id_${i}" type="text" placeholder="moin">
+                        <img onclick="addComment(${i})" src="./assets/img/buttons/send.png">
                     </div>
                 </div>
             </div>`

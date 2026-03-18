@@ -21,8 +21,6 @@ function renderBooks() {
     }
 }
 
-//LIKE BUTTON RENDERING IN TEMPLATE FUNKTION
-
 function likeButton(i) {
     let likeCounterRef = document.getElementById(`like_counter_id_${i}`);
     if(books[i].liked == true){
@@ -37,4 +35,28 @@ function likeButton(i) {
         document.getElementById(`heart_empty_id_${i}`).style = "display: none";
     }
 }
+
+// Kommentar hinzufügen
+function addComment(i) {
+    let commmentInputRef = document.getElementById(`comment_input_id_${i}`);
+
+    if (commmentInputRef.value != ""){
+        books[i].comments.push(commmentInputRef.value);
+        commmentInputRef = ""
+    }
+    saveCommentToLocalStorage();
+    renderBooks();
+}
+
+// Kommentar in localSotrage speichern
+
+funczion saveCommentToLocalStorage() {
+
+}
+
+// Kommentare rendern
+
+// Like Status in localStorage speichern
+
+// Like Status rendern 
 
