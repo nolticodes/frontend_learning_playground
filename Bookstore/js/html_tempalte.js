@@ -10,7 +10,7 @@ function getTemplateBookStatsHTML(i) {
 
                 <div class="book_infobox_main">
                     <div class="book_infobox_main_img">
-                        <img src="./assets/img/book_icon.png">
+                        <img src="./assets/img/book_icon_2.png">
                     </div>
 
                     <div class="border_line">
@@ -43,14 +43,14 @@ function getTemplateBookStatsHTML(i) {
                     </div>
 
                     <div class="book_infobox_main_comments_section"> 
-                        <h2 id="book_infobox_comment_id${i}" class="book_infobox_main_comments">Kommentare:</h2>
+                        <div id="book_infobox_comment_id${i}" class="book_infobox_main_comments"> <h2>Kommentare: </h2></div>
                     </div>
 
                     <div class="border_line">
                     </div>
 
                     <div class="book_infobox_send_comment_section">
-                        <input id="comment_input_id_${i}" type="text" placeholder="moin">
+                        <input id="comment_input_id_${i}" type="text" placeholder="Dein Kommentar">
                         <img onclick="addComment(${i})" src="./assets/img/buttons/send.png">
                     </div>
                 </div>
@@ -65,7 +65,7 @@ function getTemplateBookCommentsHTML(i, j) {
                 <td class="table_value_comment">${books[i].comments[j].comment}</td>
             </tr>
         </table>
-            `
+        `
 }
 
 function getTemplateLikeButtonLikedHTML(i) {
