@@ -58,6 +58,7 @@ function addComment(i) {
     saveCommentToLocalStorage(i);
     getCommentsFromLocalStorage(i);
     renderCommentsCurrentBook(i);
+    
 }
 
 function renderCommentsCurrentBook(i) {
