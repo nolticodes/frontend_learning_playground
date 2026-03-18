@@ -154,8 +154,8 @@
     color: black;
     flex: 1;
     border: none;
-    border-radius: 8px;
-    padding-left: 8px;
+    border-radius: 16px;
+    padding-left: 16px;
     padding-right: 8px;
     line-height: 24px;
 }

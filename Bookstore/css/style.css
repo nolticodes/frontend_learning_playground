@@ -11,6 +11,7 @@ header {
     height: 120px;
     display: flex;
     justify-content: center;
+    background-color: #03242E;
 }
 
 main {
@@ -18,6 +19,7 @@ main {
     height: 100dh;
     display: flex;
     justify-content: center;
+    background-color: #011721;
 }
 
 footer {
@@ -25,6 +27,7 @@ footer {
     height: 120px;
     display: flex;
     justify-content: center;
+    background-color: #03242E;
 }
 
 .header_content {
