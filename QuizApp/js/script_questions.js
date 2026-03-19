@@ -157,16 +157,16 @@ let quiz_navbar_text_4 = [
         "question": "Welche Haarfarbe hat Yung Hurn",
         "answer_1": "Schwarze",
         "answer_2": "Rot",
-        "answer_3": "Gelb",
+        "answer_3": "Blond",
         "answer_4": "Er hat eine Glatze",
         "right_answer": 1
     },
     {
-        "question": "Wie heißt die Frau von Kanye West??!!",
-        "answer_1": "Kim",
-        "answer_2": "Kanye",
-        "answer_3": "Bianca",
-        "answer_4": "Taylor",
+        "question": "Mit wem war Yung Hurn zusammen",
+        "answer_1": "Kim Kardashian",
+        "answer_2": "Er lehnt Beziehungen ab",
+        "answer_3": "Palina Rojisnki",
+        "answer_4": "Mit sich selber",
         "right_answer": 3
     },
 ];
