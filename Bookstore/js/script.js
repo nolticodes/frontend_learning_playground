@@ -10,8 +10,8 @@ function renderBooks() {
     bookInfoboxRef.innerHTML = "";
 
     for (i = 0; i < books.length; i++) {
-        bookInfoboxRef.innerHTML += getTemplateBookStatsHTML(i)
-        setCommentArea(i)
+        bookInfoboxRef.innerHTML += getTemplateBookStatsHTML(i);
+        setCommentArea(i);
         setLikeArea(i);
     }
 }
@@ -91,6 +91,35 @@ function getBooksFromLocalStorage() {
         books
     } else {
         books = booksFromLocalStorage
+    }
+}
+
+// Set Book Category
+function set_book_category_fantasy() {
+    let getCategoryRef = document.getElementById("catagroy_fantasy_id").innerHTML;
+
+    checkCategory(getCategoryRef);
+
+}
+
+let newBookArray = ""
+
+function checkCategory(getCategoryRef) {
+    for (i=0; i < books.length; i++) {
+        if(books[i].genre == getCategoryRef) {
+            newBookArray += books[i]
+        }
+    }
+    return newBookArray
+}
+
+function renderBookCategorySelected() {
+    let bookInfoboxRef = document.getElementById("section_book_infobox_id");
+
+    for(i=0; i < newBookArray.length; i++){
+        bookInfoboxRef.innerHTML += getTemplateBookStatsHTML(i);
+        setCommentArea(i);
+        setLikeArea(i);
     }
 }
 
