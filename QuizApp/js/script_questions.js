@@ -87,42 +87,42 @@ let quiz_navbar_text_2 = [
 
 let quiz_navbar_text_3 = [
     {
-        "question": "Wie ist der Vorname von Kanye West??!",
-        "answer_1": "Ye",
-        "answer_2": "West",
-        "answer_3": "North",
-        "answer_4": "Kanye",
-        "right_answer": 4
+        "question": "Welcher Zahn fehlt von Makko?",
+        "answer_1": "Schneidezahn",
+        "answer_2": "Eckzahn",
+        "answer_3": "Keiner",
+        "answer_4": "Backenzahn",
+        "right_answer": 1
     },
     {
-        "question": "Wie ist der Nachname von Kanye West??!",
-        "answer_1": "North",
-        "answer_2": "West",
-        "answer_3": "East",
-        "answer_4": "South",
+        "question": "Welche Art von Musik macht Makko?",
+        "answer_1": "Schlager",
+        "answer_2": "Rap",
+        "answer_3": "Pop",
+        "answer_4": "Gar Keine",
         "right_answer": 2
     },
     {
         "question": "Welches Lied ist von Kanye West??!",
-        "answer_1": "Circles",
-        "answer_2": "Shabbabs Botten",
-        "answer_3": "Burn",
+        "answer_1": "Shababs Botten",
+        "answer_2": "Burn",
+        "answer_3": "GINA",
         "answer_4": "Battlefield Freestyle",
         "right_answer": 3
     },
     {
-        "question": "Wie heißt die Modemarke von Kanye West??!",
-        "answer_1": "Yeezy",
-        "answer_2": "Kanye",
-        "answer_3": "Kanye West",
-        "answer_4": "Ye",
+        "question": "Für was ist Makko neben Musik bekannt?",
+        "answer_1": "Skaten",
+        "answer_2": "Nähen",
+        "answer_3": "Influencer",
+        "answer_4": "Er ist nicht bekannt",
         "right_answer": 1
     },
     {
-        "question": "Wie heißt die Frau von Kanye West??!",
-        "answer_1": "Kim",
+        "question": "Wo wohnt Makko",
+        "answer_1": "Hamburg",
         "answer_2": "Kanye",
-        "answer_3": "Bianca",
+        "answer_3": "Berlin",
         "answer_4": "Taylor",
         "right_answer": 3
     },
