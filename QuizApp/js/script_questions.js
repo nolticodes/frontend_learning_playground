@@ -138,11 +138,11 @@ let quiz_navbar_text_4 = [
         "right_answer": 4
     },
     {
-        "question": "Wie ist der Nachname von Kanye West??!!",
-        "answer_1": "North",
-        "answer_2": "West",
-        "answer_3": "East",
-        "answer_4": "South",
+        "question": "Wie heißt das neuste Lied von Yung Hurn",
+        "answer_1": "Bianco",
+        "answer_2": "Samurai Schwert",
+        "answer_3": "Wer ist Yung Hurn",
+        "answer_4": "Burn",
         "right_answer": 2
     },
     {
