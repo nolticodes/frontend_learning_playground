@@ -121,9 +121,9 @@ let quiz_navbar_text_3 = [
     {
         "question": "Wo wohnt Makko",
         "answer_1": "Hamburg",
-        "answer_2": "Kanye",
+        "answer_2": "Frankfurt",
         "answer_3": "Berlin",
-        "answer_4": "Taylor",
+        "answer_4": "Wolfsburg",
         "right_answer": 3
     },
 ];
