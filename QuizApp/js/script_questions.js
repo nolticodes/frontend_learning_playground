@@ -130,11 +130,11 @@ let quiz_navbar_text_3 = [
 
 let quiz_navbar_text_4 = [
     {
-        "question": "Wie ist der Vorname von Kanye West??!!",
-        "answer_1": "Ye",
-        "answer_2": "West",
-        "answer_3": "North",
-        "answer_4": "Kanye",
+        "question": "Woher kommt Yung Hurn",
+        "answer_1": "Deutschland",
+        "answer_2": "Neverland",
+        "answer_3": "Polen",
+        "answer_4": "Österreich",
         "right_answer": 4
     },
     {
