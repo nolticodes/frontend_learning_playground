@@ -57,12 +57,82 @@ function getTemplateBookStatsHTML(i) {
             </div>`
 }
 
+function getTemplateBookCategorySelectedStatsHTML(i) {
+    return `
+            <div class="book_infobox">
+                <div id="book_infobox_title_id" class="book_infobox_header">
+                    <h2>${newBookArray[i].name}</h2>
+                </div>
+
+                <div class="border_line">
+                </div>
+
+                <div class="book_infobox_main">
+                    <div class="book_infobox_main_img">
+                        <img src="./assets/img/book_icon_2.png">
+                    </div>
+
+                    <div class="border_line">
+                    </div>
+
+                    <div class="book_infobox_main_header">
+                        <h3>${newBookArray[i].price.toFixed(2)} €</h3>
+                        <div class="book_infobox_main_header_likes" id="like_img_id_${i}">
+                            <h4 id="like_counter_id_${i}">${newBookArray[i].likes}</h4>
+                            
+                        </div>
+                    </div>
+
+                    <table class="book_infobox_main_stats">
+                        <tr>
+                            <td class="table_title">Author:</td>
+                            <td class="table_value" id="book_infobox_author_id">${newBookArray[i].author}</td>
+                        </tr>
+                        <tr>
+                            <td class="table_title">Erscheinungsjahr:</td>
+                            <td class="table_value" id="book_infobox_year_id">${newBookArray[i].publishedYear}</td>
+                        </tr>
+                        <tr>
+                            <td class="table_title">Genre:</td>
+                            <td class="table_value" id="book_infobox_genre_id">${newBookArray[i].genre}</td>
+                        </tr>
+                    </table>
+
+                    <div class="border_line">
+                    </div>
+
+                    <div class="book_infobox_main_comments_section"> 
+                        <div id="book_infobox_comment_id${i}" class="book_infobox_main_comments"> <h2>Kommentare: </h2></div>
+                    </div>
+
+                    <div class="border_line">
+                    </div>
+
+                    <div class="book_infobox_send_comment_section">
+                        <input id="comment_input_id_${i}" type="text" placeholder="Dein Kommentar">
+                        <img onclick="addComment(${i})" src="./assets/img/buttons/send.png">
+                    </div>
+                </div>
+            </div>`
+}
+
 function getTemplateBookCommentsHTML(i, j) {
     return`
         <table class="book_infobox_main_comments_table">
             <tr>
                 <td class="table_title_comment">${books[i].comments[j].name}:</td>
                 <td class="table_value_comment">${books[i].comments[j].comment}</td>
+            </tr>
+        </table>
+        `
+}
+
+function getTemplateBookCategorySelectedCommentsHTML(i, j) {
+    return`
+        <table class="book_infobox_main_comments_table">
+            <tr>
+                <td class="table_title_comment">${newBookArray[i].comments[j].name}:</td>
+                <td class="table_value_comment">${newBookArray[i].comments[j].comment}</td>
             </tr>
         </table>
         `

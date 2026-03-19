@@ -1,4 +1,5 @@
 let commentsInLocalStorage = []; 
+let newBookArray = []
 
 function init() {
     getBooksFromLocalStorage();
@@ -9,7 +10,7 @@ function renderBooks() {
     let bookInfoboxRef = document.getElementById("section_book_infobox_id");
     bookInfoboxRef.innerHTML = "";
 
-    for (i = 0; i < books.length; i++) {
+    for (let i = 0; i < books.length; i++) {
         bookInfoboxRef.innerHTML += getTemplateBookStatsHTML(i);
         setCommentArea(i);
         setLikeArea(i);
@@ -19,8 +20,19 @@ function renderBooks() {
 function setCommentArea(i) {
     let bookCommentRef = document.getElementById(`book_infobox_comment_id${i}`);
         if (books[i].comments.length > 0) {
-            for (j = 0; j < books[i].comments.length; j++) {
+            for (let j = 0; j < books[i].comments.length; j++) {
                 bookCommentRef.innerHTML += getTemplateBookCommentsHTML(i, j)
+            }
+        } else {
+            bookCommentRef.innerHTML += "Bisher keine Kommentare"
+        }
+}
+
+function setCommentAreaCategorySelected(i) {
+    let bookCommentRef = document.getElementById(`book_infobox_comment_id${i}`);
+        if (newBookArray[i].comments.length > 0) {
+            for (let j = 0; j < newBookArray[i].comments.length; j++) {
+                bookCommentRef.innerHTML += getTemplateBookCategorySelectedCommentsHTML(i, j)
             }
         } else {
             bookCommentRef.innerHTML += "Bisher keine Kommentare"
@@ -30,6 +42,15 @@ function setCommentArea(i) {
 function setLikeArea(i) {
     let likeStatusRef = document.getElementById(`like_img_id_${i}`)
     if (books[i].liked == true) {
+        likeStatusRef.innerHTML += getTemplateLikeButtonLikedHTML(i)
+    } else {
+        likeStatusRef.innerHTML += getTemplateLikeButtonNotLikedHTML(i)
+    }
+}
+
+function setLikeAreaCategorySelected(i) {
+    let likeStatusRef = document.getElementById(`like_img_id_${i}`)
+    if (newBookArray[i].liked == true) {
         likeStatusRef.innerHTML += getTemplateLikeButtonLikedHTML(i)
     } else {
         likeStatusRef.innerHTML += getTemplateLikeButtonNotLikedHTML(i)
@@ -96,30 +117,29 @@ function getBooksFromLocalStorage() {
 
 // Set Book Category
 function set_book_category_fantasy() {
-    let getCategoryRef = document.getElementById("catagroy_fantasy_id").innerHTML;
+    let getCategoryRef = document.getElementById("catagory_fantasy_id").innerHTML;
 
-    checkCategory(getCategoryRef);
-
+    getBooksSelectedCategory(getCategoryRef);
+    renderBookCategorySelected();
 }
 
-let newBookArray = ""
-
-function checkCategory(getCategoryRef) {
-    for (i=0; i < books.length; i++) {
+function getBooksSelectedCategory(getCategoryRef) {
+    newBookArray = []; 
+    for (let i=0; i < books.length; i++) {
         if(books[i].genre == getCategoryRef) {
-            newBookArray += books[i]
+            newBookArray.push(books[i])
         }
     }
-    return newBookArray
 }
 
 function renderBookCategorySelected() {
     let bookInfoboxRef = document.getElementById("section_book_infobox_id");
+    bookInfoboxRef.innerHTML = ""
 
-    for(i=0; i < newBookArray.length; i++){
-        bookInfoboxRef.innerHTML += getTemplateBookStatsHTML(i);
-        setCommentArea(i);
-        setLikeArea(i);
+    for(let i=0; i < newBookArray.length; i++){
+        bookInfoboxRef.innerHTML += getTemplateBookCategorySelectedStatsHTML(i);
+        setCommentAreaCategorySelected(i);
+        setLikeAreaCategorySelected(i);
     }
 }
 
