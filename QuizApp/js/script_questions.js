@@ -146,11 +146,11 @@ let quiz_navbar_text_4 = [
         "right_answer": 2
     },
     {
-        "question": "Welches Lied ist von Kanye West??!!",
-        "answer_1": "Circles",
-        "answer_2": "Shabbabs Botten",
-        "answer_3": "Burn",
-        "answer_4": "Battlefield Freestyle",
+        "question": "Was hat er hinter Vapinao gemacht",
+        "answer_1": "Musik Video gedreht",
+        "answer_2": "Döner gefetzt",
+        "answer_3": "Konsumiert",
+        "answer_4": "Geschlafen",
         "right_answer": 3
     },
     {
