@@ -154,11 +154,11 @@ let quiz_navbar_text_4 = [
         "right_answer": 3
     },
     {
-        "question": "Wie heißt die Modemarke von Kanye West??!!",
-        "answer_1": "Yeezy",
-        "answer_2": "Kanye",
-        "answer_3": "Kanye West",
-        "answer_4": "Ye",
+        "question": "Welche Haarfarbe hat Yung Hurn",
+        "answer_1": "Schwarze",
+        "answer_2": "Rot",
+        "answer_3": "Gelb",
+        "answer_4": "Er hat eine Glatze",
         "right_answer": 1
     },
     {
