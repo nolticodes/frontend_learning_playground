@@ -147,3 +147,5 @@ function renderBookCategorySelected() {
     }
 }
 
+// add comments and likes to right book when category is selected 
+
