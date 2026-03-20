@@ -2,7 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     font-family: "IBM Plex Mono", monospace;
-    color: white
+    font-weight: normal;
 }
 
 /* CONTENTBEGRENZUNG */
