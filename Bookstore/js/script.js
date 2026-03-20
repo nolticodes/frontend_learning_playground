@@ -6,6 +6,7 @@ function init() {
     renderBooks();
 }
 
+// Render books to HTML
 function renderBooks() {
     let bookInfoboxRef = document.getElementById("section_book_infobox_id");
     bookInfoboxRef.innerHTML = "";
@@ -17,6 +18,7 @@ function renderBooks() {
     }
 }
 
+// Render book comments to HTML
 function setCommentArea(i) {
     let bookCommentRef = document.getElementById(`book_infobox_comment_id${i}`);
         if (books[i].comments.length > 0) {
@@ -39,6 +41,7 @@ function setCommentAreaCategorySelected(i) {
         }
 }
 
+// Set like Area of books
 function setLikeArea(i) {
     let likeStatusRef = document.getElementById(`like_img_id_${i}`)
     if (books[i].liked == true) {
@@ -57,6 +60,7 @@ function setLikeAreaCategorySelected(i) {
     }
 }
 
+// Set like buttons of books
 function likeButton(i) {
     let likeCounterRef = document.getElementById(`like_counter_id_${i}`);
     if (books[i].liked == true) {
@@ -75,7 +79,7 @@ function likeButton(i) {
     saveNewBooksArray()
 }
 
-// Add Comment
+// Add comments to books
 function addComment(i) {
     let commmentInputRef = document.getElementById(`comment_input_id_${i}`);
 
@@ -101,7 +105,7 @@ function getNewCommentsArea(i) {
     return newComments;
 }
 
-// Save New Books Array to local Storage
+// Save bew books array to local storage
 function saveNewBooksArray() {
     localStorage.setItem("newBooks", JSON.stringify(books))
 }
@@ -115,7 +119,7 @@ function getBooksFromLocalStorage() {
     }
 }
 
-// Set Book Category
+// Set and render book category
 function set_book_category_fantasy() {
     let getCategoryRef = document.getElementById("catagory_fantasy_id").innerHTML;
 
