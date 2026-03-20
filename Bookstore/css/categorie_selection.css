@@ -20,3 +20,9 @@
     font-weight: bold;
     text-decoration: underline;
 }
+
+.book_categories_area_list h3:active {
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: underline;
+}

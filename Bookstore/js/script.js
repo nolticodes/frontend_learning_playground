@@ -119,6 +119,8 @@ function getBooksFromLocalStorage() {
     }
 }
 
+// bold font when category is selected
+
 // Set and render book category
 function set_book_category_fantasy() {
     let getCategoryRef = document.getElementById("catagory_fantasy_id").innerHTML;
