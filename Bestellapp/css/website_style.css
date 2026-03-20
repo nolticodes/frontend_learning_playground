@@ -77,4 +77,24 @@
 /* #endregion MAIN HEADER */
 
 /* #region MAIN  */
+
+.dish_category_max_width {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.dish_category_max_width {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+} 
+.dish_category_max_width h2 {
+    padding-left: 24px;
+}
+
+.dish_category_max_width img {
+    left: 80px;
+    height: 100px;
+}
 /* #endregion MAIN  */

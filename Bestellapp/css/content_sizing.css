@@ -46,14 +46,16 @@ main {
     height: 56px;
     display: flex;
     justify-content: center;
-    background-color: pink;
+    background-color: orange;
+    margin-bottom: 40px; 
 }
 
 .dish_category_max_width {
-    width: 100%;
+    min-height: 100%;
     max-width: 1440px;
-    height: 100%;
+    width: 100%;
     background-color: orange;
+    padding-left: 80px;
 }
 
 .dish_content_full_width {
@@ -61,6 +63,7 @@ main {
     background-color: green;
     display: flex;
     justify-content: center;
+    margin-bottom: 40px;   
 }
 
 .dish_content_max_width {
