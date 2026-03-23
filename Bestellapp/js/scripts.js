@@ -57,7 +57,7 @@ function getHTMLForCart() {
                             <h4><span>${cart[i].amount}x </span>${cart[i].name}</h4>
                             <div class="basket_dish_list_bottom">
                                 <div class="basket_dish_list_bottom_counter">
-                                    <img src="./assets/icons/delete.svg">
+                                    <img onclick="deleteDishFromCart(${i})" src="./assets/icons/delete.svg">
                                     <h5>${cart[i].amount} </h5> 
                                     <h4 onclick="increaseAmount(${i})">+</h4>
                                 </div>
@@ -70,5 +70,10 @@ function getHTMLForCart() {
 
 function increaseAmount(i) {
     cart[i].amount = cart[i].amount + 1;
+    renderCart();
+}
+
+function deleteDishFromCart(i) {
+    cart.splice(i, 1) ;
     renderCart();
 }
