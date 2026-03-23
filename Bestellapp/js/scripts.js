@@ -25,7 +25,8 @@ function renderDishesFromCategory(i) {
 function addToCart(j) {
     cart.push({"name": dishes[j].name,
                 "price": dishes[j].price,
-                "amount": 1
+                "amount": 1,
+                "dishIndex": j
     });
     console.log(cart)     
 }
@@ -42,7 +43,27 @@ function checkDishInCart (j){
         addToCart(j)
     }
     renderCart();
+    changeAddToBasketButton(j);
 }
+
+function changeAddToBasketButton(j) {
+    let buttonAddToBasketRef = document.getElementById(`button_not_added_${j}`);
+    let buttonAddAgainRef = document.getElementById(`button_added_${j}`);
+    let found = false;
+
+    for (let i = 0; i < cart.length; i++){
+        if(dishes[j].name == cart[i].name){
+            buttonAddToBasketRef.style = "display: none";
+            buttonAddAgainRef.style = "display: flex; color: orange";
+            found = true
+        } 
+    }
+    if (found == false) {
+        buttonAddToBasketRef.style = "display: flex";
+            buttonAddAgainRef.style = "display: none;";
+    }
+}        
+  
 
 function renderCart() {
     let basketDishListRef = document.getElementById("basket_dish_list_id");
@@ -73,7 +94,15 @@ function increaseAmount(i) {
     renderCart();
 }
 
-function deleteDishFromCart(i) {
-    cart.splice(i, 1) ;
+function decreaseAmount(i) {
+    cart[i].amount = cart[i].amount - 1;
     renderCart();
 }
+
+function deleteDishFromCart(i) {
+    let deletedDishIndex = cart[i].dishIndex
+    cart.splice(i, 1) ;
+    renderCart();
+    changeAddToBasketButton(deletedDishIndex)
+}
+

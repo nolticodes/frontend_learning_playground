@@ -28,7 +28,7 @@ function getHTMLForDishes(j) {
                                     </div>
                                     <div class="dish_card_bottom">
                                         <button onclick="checkDishInCart(${j})" id="button_not_added_${j}">Add to basket</button>
-                                        <button id="button_added${j}" style="display: none; color: orange">Add to basket</button>                                        
+                                        <button onclick="checkDishInCart (${j})" id="button_added_${j}" style="display: none; color: orange">Add again</button>                                        
                                     </div>
                                 </div>
                             </div>
