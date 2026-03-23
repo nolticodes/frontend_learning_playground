@@ -1,5 +1,4 @@
 
-
 function init() {
     renderCategories()
 }
@@ -39,12 +38,17 @@ function getHTMLForDishes(j) {
                                         <p>Zutaten: ${dishes[j].ingredients}</p>
                                     </div>
                                     <div class="dish_card_bottom">
-                                        <button id="button_not_added_${j}">Add to basket</button>
-                                        <button id="button_added${j}" style="display: none;">Add to basket</button>                                        
+                                        <button onclick="addToCart()" id="button_not_added_${j}">Add to basket</button>
+                                        <button id="button_added${j}" style="display: none; color: orange">Add to basket</button>                                        
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>`
+}
+
+function addToCart() {
+    let basketDishListRef = document.getElementById("basket_dish_list_id")
+
 }
