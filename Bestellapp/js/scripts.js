@@ -16,8 +16,13 @@ function renderDishesFromCategory(i) {
     let dishesFromCategoryRef = document.getElementById(`dishes_from_category_${i}`);
     for (j = 0; j < dishes.length; j++) {
         if (dishes[j].category == categories[i]) {
-            dishesFromCategoryRef.innerHTML +=
-                `<section class="dish_content_full_width">
+            dishesFromCategoryRef.innerHTML += getHTMLForDishes(j)
+        }
+    }
+}
+
+function getHTMLForDishes(j) {
+    return `<section class="dish_content_full_width">
                     <div class="dish_content_max_width">
                         <div class="dishes_category_list">
                             <div class="dish_card">
@@ -34,16 +39,11 @@ function renderDishesFromCategory(i) {
                                         <p>Zutaten: ${dishes[j].ingredients}</p>
                                     </div>
                                     <div class="dish_card_bottom">
-                                        <p>BUTTON</p>
+                                        <button id="button_${j}">Add to basket</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>`
-        }
-
-
-    }
-
 }

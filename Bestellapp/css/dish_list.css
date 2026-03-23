@@ -58,6 +58,16 @@
     align-items: end;
 }
 
+.dish_card_bottom button {
+    background-color: white;
+    border: none;
+    border-radius: 16px;
+    color: black;
+    font-weight: 500;
+    padding: 8px 8px;
+
+}
+
 .dish_card_image {
     width: 30%;
 }
