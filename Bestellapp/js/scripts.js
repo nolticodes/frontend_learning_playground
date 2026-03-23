@@ -38,7 +38,7 @@ function getHTMLForDishes(j) {
                                         <p>Zutaten: ${dishes[j].ingredients}</p>
                                     </div>
                                     <div class="dish_card_bottom">
-                                        <button onclick="addToCart()" id="button_not_added_${j}">Add to basket</button>
+                                        <button onclick="checkDishInCart(${j})" id="button_not_added_${j}">Add to basket</button>
                                         <button id="button_added${j}" style="display: none; color: orange">Add to basket</button>                                        
                                     </div>
                                 </div>
@@ -48,7 +48,49 @@ function getHTMLForDishes(j) {
                 </section>`
 }
 
-function addToCart() {
-    let basketDishListRef = document.getElementById("basket_dish_list_id")
+cart = [];
 
+function addToCart(j) {
+    cart.push({"name": dishes[j].name,
+                "price": dishes[j].price,
+                "amount": 1
+    });
+    console.log(cart)     
+}
+
+function checkDishInCart (j){
+    let found = false
+    for (let i=0 ; i < cart.length; i++){
+        if(dishes[j].name == cart[i].name) {
+            cart[i].amount = cart[i].amount +1;
+            found = true 
+            }        
+        }
+    if (found == false) {
+        addToCart(j)
+    }
+    renderCart();
+}
+
+function renderCart() {
+    let basketDishListRef = document.getElementById("basket_dish_list_id");
+    basketDishListRef.innerHTML = "";
+    basketDishListRef.innerHTML += getHTMLForCart();
+
+    
+                        
+}
+
+function getHTMLForCart() {
+    let HTMLForCart = ""
+    for (let i=0; i < cart.length; i++){
+        HTMLForCart += `<div class="basket_dish_list">
+                            <h4><span>${cart[i].amount}x </span>${cart[i].name}</h4>
+                            <div class="basket_dish_list_bottom">
+                                <h5>Counter</h5>
+                                <h4>${Number(cart[i].price)*Number(cart[i].amount)}</h4>
+                            </div>
+                        </div>`
+        }
+        return HTMLForCart
 }
