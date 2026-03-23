@@ -4,7 +4,7 @@
 }
 
 .dishes_category_list {
-    width: calc(100% - 300px);
+    width: 100%;
     padding: 40px 16px;
     padding-top: 0;
 }
@@ -21,6 +21,11 @@
     border-radius: 16px;
     display: flex;
     gap: 16px
+}
+
+.dish_card:hover {
+    box-shadow: 5px 5px 5px lightgray;
+
 }
 
 .dish_card_header {
@@ -65,7 +70,12 @@
     color: black;
     font-weight: 500;
     padding: 8px 8px;
+}
 
+.dish_card_bottom button:hover {
+    color: orange;
+    cursor: pointer;
+    box-shadow: 5px 5px 5px lightgray;
 }
 
 .dish_card_image {

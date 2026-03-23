@@ -47,6 +47,22 @@ main {
     max-width: 100%;
 }
 
+.content_wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.content_left {
+    width: calc(100% -300px);
+}
+
+.content_right {
+    position: relative;
+    width: 300px;
+}
+
 .dish_category_full_width {
     width: 100%;
     height: 56px;

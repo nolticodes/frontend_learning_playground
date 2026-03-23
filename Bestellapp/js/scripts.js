@@ -39,7 +39,8 @@ function getHTMLForDishes(j) {
                                         <p>Zutaten: ${dishes[j].ingredients}</p>
                                     </div>
                                     <div class="dish_card_bottom">
-                                        <button id="button_${j}">Add to basket</button>
+                                        <button id="button_not_added_${j}">Add to basket</button>
+                                        <button id="button_added${j}" style="display: none;">Add to basket</button>                                        
                                     </div>
                                 </div>
                             </div>
