@@ -20,7 +20,7 @@ function getHTMLForDishes(j) {
                                 <div class="dish_card_stats">
                                     <div class="dish_card_header">
                                         <h3>${dishes[j].name}</h3>
-                                        <h3>${dishes[j].price}€</h3>
+                                        <h3>${dishes[j].price.toFixed(2)}€</h3>
                                     </div>
                                     <div class="dish_card_middle">
                                         <p>${dishes[j].description}</p>
@@ -36,3 +36,4 @@ function getHTMLForDishes(j) {
                     </div>
                 </section>`
 }
+

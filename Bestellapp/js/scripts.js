@@ -42,6 +42,7 @@ function checkDishInCart (j){
     if (found == false) {
         addToCart(j)
     }
+    renderSubtotal();
     renderCart();
     changeAddToBasketButton(j);
 }
@@ -60,7 +61,7 @@ function changeAddToBasketButton(j) {
     }
     if (found == false) {
         buttonAddToBasketRef.style = "display: flex";
-            buttonAddAgainRef.style = "display: none;";
+        buttonAddAgainRef.style = "display: none;";
     }
 }        
   
@@ -82,7 +83,7 @@ function getHTMLForCart() {
                                     <h5>${cart[i].amount} </h5> 
                                     <h4 onclick="increaseAmount(${i})">+</h4>
                                 </div>
-                                <h4>${Number(cart[i].price)*Number(cart[i].amount)}</h4>
+                                <h4>${(Number(cart[i].price)*Number(cart[i].amount)).toFixed(2)}</h4>
                             </div>
                         </div>`
         }
@@ -91,18 +92,34 @@ function getHTMLForCart() {
 
 function increaseAmount(i) {
     cart[i].amount = cart[i].amount + 1;
+    renderSubtotal()
     renderCart();
 }
 
 function decreaseAmount(i) {
     cart[i].amount = cart[i].amount - 1;
+    renderSubtotal()
     renderCart();
 }
 
 function deleteDishFromCart(i) {
     let deletedDishIndex = cart[i].dishIndex
-    cart.splice(i, 1) ;
+    cart.splice(i, 1);
+    renderSubtotal();
     renderCart();
     changeAddToBasketButton(deletedDishIndex)
 }
 
+
+function calculateSubtotal() {
+    let subtotal = 0;
+    for(i=0; i < cart.length; i++) {
+        subtotal += cart[i].amount * cart[i].price
+    }
+    return subtotal
+}
+
+function renderSubtotal(){
+    let subtotalRef = document.getElementById("subtotal_id");
+    subtotalRef.innerHTML = calculateSubtotal().toFixed(2)
+}
