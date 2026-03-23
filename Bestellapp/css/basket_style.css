@@ -1,5 +1,6 @@
 .shopping_cart {
     width: 300px;
+    height: 600px;
     padding-top: 24px;
     padding-bottom: 24px;
     background-color: #363534;
@@ -15,8 +16,7 @@
     width: 280px;
     border-radius: 16px;
     background-color: #FDEADC;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding: 16px;
     margin-bottom: 16px;
 }
 
@@ -28,5 +28,46 @@
     padding-bottom: 16px;
 }
 
+.basket_dish_list h5 {
+    color: black
+}
+
+
+.basket_dish_list_bottom {
+    padding-top: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.basket_dish_summary_prices {
+    width: 280px;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 8px;
+}
+
+.basket_line {
+    width: 280px;
+    height: 2px;
+    background-color: white;
+    border-radius: 2px;
+    margin-bottom: 8px;
+}
+
+.shopping_cart button {
+    background-color: orange;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 32px;
+}
+
+.shopping_cart button h2 {
+    font-weight: 500;
+}
+
+.shopping_cart button:hover {
+    cursor: pointer;
+}
 
 
