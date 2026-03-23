@@ -1,4 +1,3 @@
-let categoriesRef = document.getElementById("full_dish_content_id")
 
 
 function init() {
@@ -6,25 +5,45 @@ function init() {
 }
 
 function renderCategories() {
-    for (i = 0; i < categories.length; i++){
-        categoriesRef.innerHTML += getHTMLForCategories(i+1);
-        renderDishesFromCategory(i+1)
+    let categoriesRef = document.getElementById("full_dish_content_id");
+    for (i = 0; i < categories.length; i++) {
+        categoriesRef.innerHTML += getHTMLForCategories(i);
+        renderDishesFromCategory(i)
     }
-}
-
-function getHTMLForCategories(i) {
-    return `<section class="dish_category_full_width">
-                <div class="dish_category_max_width">
-                    <img src="./assets/img/logo_category_${i}.png">
-                    <h2>KRABBEN BURGER</h2>
-                </div>
-            </section>
-            <section id="dishes_from_category_${i}">
-            </section>`
 }
 
 function renderDishesFromCategory(i) {
     let dishesFromCategoryRef = document.getElementById(`dishes_from_category_${i}`);
-    console.log(dishesFromCategoryRef);
+    for (j = 0; j < dishes.length; j++) {
+        if (dishes[j].category == categories[i]) {
+            dishesFromCategoryRef.innerHTML +=
+                `<section class="dish_content_full_width">
+                    <div class="dish_content_max_width">
+                        <div class="dishes_category_list">
+                            <div class="dish_card">
+                                <div class="dish_card_image">
+                                    <img src="./assets/dish_img/dish_0${j}.png">
+                                </div>
+                                <div class="dish_card_stats">
+                                    <div class="dish_card_header">
+                                        <h3>${dishes[j].name}</h3>
+                                        <h3>${dishes[j].price}€</h3>
+                                    </div>
+                                    <div class="dish_card_middle">
+                                        <p>${dishes[j].description}</p>
+                                        <p>Zutaten: ${dishes[j].ingredients}</p>
+                                    </div>
+                                    <div class="dish_card_bottom">
+                                        <p>BUTTON</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>`
+        }
+
+
+    }
 
 }

@@ -35,10 +35,16 @@ main {
 }
 
 .main_header {
+    width: 100%;
+    max-width: 1440px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.main_header img {
+    max-width: 100%;
 }
 
 .dish_category_full_width {
@@ -53,7 +59,7 @@ main {
 .dish_category_max_width {
     min-height: 100%;
     max-width: 1440px;
-    width: calc(100% - 300px);
+    width: 100%;
     background-color: orange;
     padding-left: 80px;
 }

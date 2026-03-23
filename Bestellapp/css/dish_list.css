@@ -15,6 +15,7 @@
 
 .dish_card {
     width: 100%;
+    height: 180px;
     padding: 16px 16px;
     background-color: #FDEADC;
     border-radius: 16px;
@@ -39,7 +40,10 @@
     width: 100%;
     height: 33%;
     display: flex;
+    flex-direction: column;
     align-items: start;
+    justify-content: center;
+    gap: 8px
 }
 
 .dish_card_middle p {
@@ -52,5 +56,16 @@
     display: flex;
     justify-content: end;
     align-items: end;
+}
+
+.dish_card_image {
+    width: 30%;
+}
+
+.dish_card img {
+    height: 100%;
+    width: 240px;
+    object-fit: cover;
+    border-radius: 8px;
 }
 

@@ -1,7 +1,7 @@
 let categories = [
     "Krabben Burger",
     "Krosse Krabbe Pizza",
-    "krosse Krabbe Salate"
+    "Krosse Krabbe Salate"
 ]
 
 let dishes = [
