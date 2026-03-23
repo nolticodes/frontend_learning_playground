@@ -56,10 +56,19 @@ function getHTMLForCart() {
         HTMLForCart += `<div class="basket_dish_list">
                             <h4><span>${cart[i].amount}x </span>${cart[i].name}</h4>
                             <div class="basket_dish_list_bottom">
-                                <h5>Counter</h5>
+                                <div class="basket_dish_list_bottom_counter">
+                                    <img src="./assets/icons/delete.svg">
+                                    <h5>${cart[i].amount} </h5> 
+                                    <h4 onclick="increaseAmount(${i})">+</h4>
+                                </div>
                                 <h4>${Number(cart[i].price)*Number(cart[i].amount)}</h4>
                             </div>
                         </div>`
         }
         return HTMLForCart
+}
+
+function increaseAmount(i) {
+    cart[i].amount = cart[i].amount + 1;
+    renderCart();
 }

@@ -70,4 +70,22 @@
     cursor: pointer;
 }
 
+.basket_dish_list_bottom_counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px
+}
+
+.basket_dish_list_bottom_counter img {
+    height: 20px;
+}
+
+.basket_dish_list_bottom_counter img:hover {
+    cursor: pointer;
+}
+
+.basket_dish_list_bottom_counter h4:hover {
+    cursor: pointer;
+}
 
