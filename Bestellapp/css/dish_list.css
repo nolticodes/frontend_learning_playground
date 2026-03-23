@@ -1,8 +1,7 @@
 
 .dishes_category_list {
-    width: calc(100% - 300px);
-    background-color: blue;
     padding: 40px 16px;
+    padding-top: 0;
 }
 
 .dish_card_stats {

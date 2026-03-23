@@ -60,16 +60,13 @@ main {
 
 .dish_content_full_width {
     width: 100%;
-    background-color: green;
     display: flex;
     justify-content: center;
-    margin-bottom: 40px;   
 }
 
 .dish_content_max_width {
     width: 100%;
     max-width: 1440px;
-    background-color: red;
 }
 
 .dish_content {
