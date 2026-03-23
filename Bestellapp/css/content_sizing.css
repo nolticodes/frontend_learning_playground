@@ -67,6 +67,7 @@ main {
 .dish_content_max_width {
     width: 100%;
     max-width: 1440px;
+    display: flex;
 }
 
 .dish_content {

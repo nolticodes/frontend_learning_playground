@@ -1,5 +1,10 @@
 
+.full_dish_content {
+    width: 100%;
+}
+
 .dishes_category_list {
+    width: calc(100% - 300px);
     padding: 40px 16px;
     padding-top: 0;
 }
@@ -9,7 +14,7 @@
 }
 
 .dish_card {
-    width: calc(100% - 300px);
+    width: 100%;
     padding: 16px 16px;
     background-color: #FDEADC;
     border-radius: 16px;
