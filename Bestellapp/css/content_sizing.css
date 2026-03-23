@@ -53,7 +53,7 @@ main {
 .dish_category_max_width {
     min-height: 100%;
     max-width: 1440px;
-    width: 100%;
+    width: calc(100% - 300px);
     background-color: orange;
     padding-left: 80px;
 }
