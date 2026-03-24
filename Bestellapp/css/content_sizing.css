@@ -52,15 +52,20 @@ main {
     display: flex;
     justify-content: center;
     flex-grow: 1;
+    position: relative;
 }
 
 .content_left {
-    width: calc(100% -300px);
+    width: 100%;
 }
 
 .content_right {
-    position: relative;
+    position: absolute;
     width: 300px;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin-right: calc((100% - 1440px)/2);
 }
 
 .dish_category_full_width {
