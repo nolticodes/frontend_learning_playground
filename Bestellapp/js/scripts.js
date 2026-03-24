@@ -3,6 +3,7 @@ cart = [];
 
 function init() {
     renderCategories()
+    cartFullOrEmpty()
 }
 
 function renderCategories() {
@@ -23,28 +24,29 @@ function renderDishesFromCategory(i) {
 }
 
 function addToCart(j) {
-    cart.push({"name": dishes[j].name,
-                "price": dishes[j].price,
-                "amount": 1,
-                "dishIndex": j
+    cart.push({
+        "name": dishes[j].name,
+        "price": dishes[j].price,
+        "amount": 1,
+        "dishIndex": j
     });
-    console.log(cart)     
+    // cartFullOrtEmpty
 }
 
-function checkDishInCart (j){
+function checkDishInCart(j) {
     let found = false
-    for (let i=0 ; i < cart.length; i++){
-        if(dishes[j].name == cart[i].name) {
-            cart[i].amount = cart[i].amount +1;
-            found = true 
-            }        
+    for (let i = 0; i < cart.length; i++) {
+        if (dishes[j].name == cart[i].name) {
+            cart[i].amount = cart[i].amount + 1;
+            found = true
         }
+    }
     if (found == false) {
         addToCart(j)
     }
-    renderSubtotal();
-    renderTotal();
-    renderCart();
+    renderSubtotal(); // cartFullOrtEmpty
+    renderTotal(); // cartFullOrtEmpty
+    renderCart(); // cartFullOrtEmpty
     changeAddToBasketButton(j);
 }
 
@@ -52,29 +54,29 @@ function changeAddToBasketButton(j) {
     let buttonAddToBasketRef = document.getElementById(`button_not_added_${j}`);
     let buttonAddAgainRef = document.getElementById(`button_added_${j}`);
     let found = false;
-    for (let i = 0; i < cart.length; i++){
-        if(dishes[j].name == cart[i].name){
+    for (let i = 0; i < cart.length; i++) {
+        if (dishes[j].name == cart[i].name) {
             buttonAddToBasketRef.style = "display: none";
             buttonAddAgainRef.style = "display: flex; color: orange";
             found = true
-        } 
+        }
     }
     if (found == false) {
         buttonAddToBasketRef.style = "display: flex";
         buttonAddAgainRef.style = "display: none;";
     }
-}        
-  
+}
+
 
 function renderCart() {
     let basketDishListRef = document.getElementById("basket_dish_list_id");
     basketDishListRef.innerHTML = "";
-    basketDishListRef.innerHTML += getHTMLForCart();                
+    basketDishListRef.innerHTML += getHTMLForCart();
 }
 
 function getHTMLForCart() {
     let HTMLForCart = ""
-    for (let i=0; i < cart.length; i++){
+    for (let i = 0; i < cart.length; i++) {
         HTMLForCart += `<div class="basket_dish_list">
                             <h4><span>${cart[i].amount}x </span>${cart[i].name}</h4>
                             <div class="basket_dish_list_bottom">
@@ -83,11 +85,11 @@ function getHTMLForCart() {
                                     <h5>${cart[i].amount} </h5> 
                                     <h4 onclick="increaseAmount(${i})">+</h4>
                                 </div>
-                                <h4>${(Number(cart[i].price)*Number(cart[i].amount)).toFixed(2)}€</h4>
+                                <h4>${(Number(cart[i].price) * Number(cart[i].amount)).toFixed(2)}€</h4>
                             </div>
                         </div>`
-        }
-        return HTMLForCart
+    }
+    return HTMLForCart
 }
 
 function increaseAmount(i) {
@@ -107,21 +109,21 @@ function decreaseAmount(i) {
 function deleteDishFromCart(i) {
     let deletedDishIndex = cart[i].dishIndex
     cart.splice(i, 1);
-    renderSubtotal();
-    renderTotal();
-    renderCart();
+    renderSubtotal(); // cartFullOrtEmpty
+    renderTotal(); // cartFullOrtEmpty
+    renderCart(); // cartFullOrtEmpty
     changeAddToBasketButton(deletedDishIndex)
 }
 
 function calculateSubtotal() {
     let subtotal = 0;
-    for(i=0; i < cart.length; i++) {
+    for (i = 0; i < cart.length; i++) {
         subtotal += (cart[i].amount * cart[i].price);
     }
-    return subtotal 
+    return subtotal
 }
 
-function renderSubtotal(){
+function renderSubtotal() {
     let subtotalRef = document.getElementById("subtotal_id");
     subtotalRef.innerHTML = `${calculateSubtotal().toFixed(2)}€`
 }
@@ -137,4 +139,17 @@ function renderTotal() {
     let totalRef = document.getElementById("total_id");
     totalRef.innerHTML = calculateTotal();
     totalButtonRef.innerHTML = `Buy now (${calculateTotal()})`
+}
+
+function cartFullOrEmpty() {
+    let basketRef = document.getElementById("shopping_cart_id");
+    if (cart.length == 0) {
+        basketRef.innerHTML = `<div class="shopping_cart_content_empty">
+                                <h2>Dein Warenkorb ist noch leer</h2>
+                                </div>`
+    } else {
+        renderSubtotal();
+        renderTotal();
+        renderCart();
+    }
 }

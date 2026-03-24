@@ -19,6 +19,16 @@
     justify-content: space-between;
 }
 
+.shopping_cart_content_empty {
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 32px;
+    text-align: center;
+    line-height: 40px;
+}
+
 .basket_dish_list {
     width: 280px;
     border-radius: 16px;
