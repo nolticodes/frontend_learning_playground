@@ -37,3 +37,37 @@ function getHTMLForDishes(j) {
                 </section>`
 }
 
+function getHTMLForCart() {
+    let HTMLForCart = ""
+    for (let i = 0; i < cart.length; i++) {
+        if (cart[i].amount > 1) {
+            HTMLForCart += `<div class="basket_dish_list">
+                                <div class="basket_dish_list_title_bin">
+                                    <h4><span>${cart[i].amount}x </span>${cart[i].name}</h4>
+                                    <img onclick="deleteDishFromCart(${i})" src="./assets/icons/delete.svg">
+                                </div>
+                            <div class="basket_dish_list_bottom">
+                                <div class="basket_dish_list_bottom_counter">
+                                    <h4 onclick="decreaseAmount(${i})"> -</h4>                          
+                                    <h5>${cart[i].amount} </h5> 
+                                    <h4 onclick="increaseAmount(${i})">+</h4>
+                                </div>
+                                <h4>${(Number(cart[i].price) * Number(cart[i].amount)).toFixed(2)}€</h4>
+                            </div>
+                        </div>`
+        } else {
+            HTMLForCart += `<div class="basket_dish_list">
+                                <h4><span>${cart[i].amount}x </span>${cart[i].name}</h4>
+                            <div class="basket_dish_list_bottom">
+                                <div class="basket_dish_list_bottom_counter">
+                                    <img onclick="deleteDishFromCart(${i})" src="./assets/icons/delete.svg">
+                                    <h5>${cart[i].amount} </h5> 
+                                    <h4 onclick="increaseAmount(${i})">+</h4>
+                                </div>
+                                <h4>${(Number(cart[i].price) * Number(cart[i].amount)).toFixed(2)}€</h4>
+                            </div>
+                        </div>`
+        }
+    }
+    return HTMLForCart
+}
