@@ -43,6 +43,7 @@ function checkDishInCart (j){
         addToCart(j)
     }
     renderSubtotal();
+    renderTotal();
     renderCart();
     changeAddToBasketButton(j);
 }
@@ -51,7 +52,6 @@ function changeAddToBasketButton(j) {
     let buttonAddToBasketRef = document.getElementById(`button_not_added_${j}`);
     let buttonAddAgainRef = document.getElementById(`button_added_${j}`);
     let found = false;
-
     for (let i = 0; i < cart.length; i++){
         if(dishes[j].name == cart[i].name){
             buttonAddToBasketRef.style = "display: none";
@@ -93,12 +93,14 @@ function getHTMLForCart() {
 function increaseAmount(i) {
     cart[i].amount = cart[i].amount + 1;
     renderSubtotal()
+    renderTotal();
     renderCart();
 }
 
 function decreaseAmount(i) {
     cart[i].amount = cart[i].amount - 1;
-    renderSubtotal()
+    renderSubtotal();
+    renderTotal();
     renderCart();
 }
 
@@ -106,6 +108,7 @@ function deleteDishFromCart(i) {
     let deletedDishIndex = cart[i].dishIndex
     cart.splice(i, 1);
     renderSubtotal();
+    renderTotal();
     renderCart();
     changeAddToBasketButton(deletedDishIndex)
 }
@@ -122,4 +125,15 @@ function calculateSubtotal() {
 function renderSubtotal(){
     let subtotalRef = document.getElementById("subtotal_id");
     subtotalRef.innerHTML = calculateSubtotal().toFixed(2)
+}
+
+function calculateTotal() {
+    let total = 0;
+    total = Number(4.99 + calculateSubtotal()).toFixed(2);
+    return total
+}
+
+function renderTotal() {
+    let totalRef = document.getElementById("total_id")
+    totalRef.innerHTML = calculateTotal()
 }
