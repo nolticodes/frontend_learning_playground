@@ -71,6 +71,18 @@ function renderCart() {
     basketDishListRef.innerHTML += getHTMLForCart();
 }
 
+function getHTMLForCart() {
+    let HTMLForCart = ""
+    for (let i = 0; i < cart.length; i++) {
+        if (cart[i].amount > 1) {
+            HTMLForCart += getHTMLForCartDishAmountBiggerThanOne(i)
+        } else {
+            HTMLForCart += getHTMLForCartDishAmountOne(i)
+        }
+    }
+    return HTMLForCart
+}
+
 function increaseAmount(i) {
     cart[i].amount = cart[i].amount + 1;
     renderSubtotal()
