@@ -98,3 +98,16 @@
     height: 100px;
 }
 /* #endregion MAIN  */
+
+.footer_content a {
+    text-decoration: none;
+}
+
+.footer_content a:hover {
+    text-decoration: underline;
+}
+
+.footer_content p:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
