@@ -119,3 +119,13 @@
     overflow: scroll;
 }
 
+.basket_dish_list_title_bin {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.basket_dish_list_title_bin img:hover {
+    cursor: pointer;
+}
+
