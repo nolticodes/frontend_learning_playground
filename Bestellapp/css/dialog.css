@@ -1,9 +1,6 @@
 dialog {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-color: #363534;
-    border: none;
+    width: 400px;
+    height: 200px;
+    margin-top: calc((100% - 400px)/ 2);
+    margin-left: calc((100% - 200px)/ 2);
 }
