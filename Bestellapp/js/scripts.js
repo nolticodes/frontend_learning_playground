@@ -30,7 +30,7 @@ function addToCart(j) {
         "amount": 1,
         "dishIndex": j
     });
-    // cartFullOrtEmpty
+    cartFullOrEmpty()
 }
 
 function checkDishInCart(j) {
@@ -44,9 +44,7 @@ function checkDishInCart(j) {
     if (found == false) {
         addToCart(j)
     }
-    renderSubtotal(); // cartFullOrtEmpty
-    renderTotal(); // cartFullOrtEmpty
-    renderCart(); // cartFullOrtEmpty
+    cartFullOrEmpty()
     changeAddToBasketButton(j);
 }
 
@@ -109,9 +107,7 @@ function decreaseAmount(i) {
 function deleteDishFromCart(i) {
     let deletedDishIndex = cart[i].dishIndex
     cart.splice(i, 1);
-    renderSubtotal(); // cartFullOrtEmpty
-    renderTotal(); // cartFullOrtEmpty
-    renderCart(); // cartFullOrtEmpty
+    cartFullOrEmpty()
     changeAddToBasketButton(deletedDishIndex)
 }
 
@@ -142,14 +138,17 @@ function renderTotal() {
 }
 
 function cartFullOrEmpty() {
-    let basketRef = document.getElementById("shopping_cart_id");
+    let basketRef = document.getElementById("shopping_cart_full_id");
+    let basketEmptyRef = document.getElementById("shopping_cart_empty_id")
     if (cart.length == 0) {
-        basketRef.innerHTML = `<div class="shopping_cart_content_empty">
-                                <h2>Dein Warenkorb ist noch leer</h2>
-                                </div>`
+        basketRef.style = "display: none"
+        basketEmptyRef.style = "display: flex"
     } else {
+        basketEmptyRef.style = "dispay: none"
+        basketRef.style = "display: flex"
         renderSubtotal();
         renderTotal();
         renderCart();
     }
 }
+
