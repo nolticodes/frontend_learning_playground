@@ -137,7 +137,7 @@ function cartFullOrEmpty() {
         basketRef.style = "display: none"
         basketEmptyRef.style = "display: flex"
     } else {
-        basketEmptyRef.style = "dispay: none"
+        basketEmptyRef.style = "display: none"
         basketRef.style = "display: flex"
         renderSubtotal();
         renderTotal();
