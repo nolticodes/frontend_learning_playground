@@ -145,7 +145,8 @@ function cartFullOrEmpty() {
     }
 }
 
-function checkDishAmountInCart() {
-
+function openDialog() {
+    let dialogRef = document.getElementById("order_received_dialog")
+    dialogRef.showModal();
 }
 

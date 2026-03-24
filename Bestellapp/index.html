@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="./css/content_sizing.css">
     <link rel="stylesheet" href="./css/basket_style.css">
     <link rel="stylesheet" href="./css/dish_list.css">
+    <link rel="stylesheet" href="./css/dialog.css">
 
     <!-- FAVICON -->
     <link rel="icon" type="image/png" href="./assets/img/crab_logo.png">
@@ -103,7 +104,7 @@
                                     <h4 id="total_id">4.99€</h4>
                                 </div>
 
-                                <button>
+                                <button onclick="openDialog()">
                                     <h2 id="total_for_button_id">Buy now (4.99€)</h2>
                                 </button>
                             </div>
@@ -131,6 +132,13 @@
 
         </section>
     </footer>
+
+    <dialog id="order_received_dialog">
+        
+            <h2>Vielen Dank!</h2>
+            <h3>Deine Bestellung ist angekommen und wird von uns bearbeitet</h3>
+        
+    </dialog>
 
 </body>
 
