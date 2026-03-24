@@ -12,6 +12,13 @@
     top: 0
 }
 
+.shopping_cart_content {
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .basket_dish_list {
     width: 280px;
     border-radius: 16px;
@@ -87,5 +94,18 @@
 
 .basket_dish_list_bottom_counter h4:hover {
     cursor: pointer;
+}
+
+.basket_dish_prices_section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.basket_dish_list_summary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: scroll;
 }
 

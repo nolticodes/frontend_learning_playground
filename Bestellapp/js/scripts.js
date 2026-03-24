@@ -83,7 +83,7 @@ function getHTMLForCart() {
                                     <h5>${cart[i].amount} </h5> 
                                     <h4 onclick="increaseAmount(${i})">+</h4>
                                 </div>
-                                <h4>${(Number(cart[i].price)*Number(cart[i].amount)).toFixed(2)}</h4>
+                                <h4>${(Number(cart[i].price)*Number(cart[i].amount)).toFixed(2)}€</h4>
                             </div>
                         </div>`
         }
@@ -113,27 +113,28 @@ function deleteDishFromCart(i) {
     changeAddToBasketButton(deletedDishIndex)
 }
 
-
 function calculateSubtotal() {
     let subtotal = 0;
     for(i=0; i < cart.length; i++) {
-        subtotal += cart[i].amount * cart[i].price
+        subtotal += (cart[i].amount * cart[i].price);
     }
-    return subtotal
+    return subtotal 
 }
 
 function renderSubtotal(){
     let subtotalRef = document.getElementById("subtotal_id");
-    subtotalRef.innerHTML = calculateSubtotal().toFixed(2)
+    subtotalRef.innerHTML = `${calculateSubtotal().toFixed(2)}€`
 }
 
 function calculateTotal() {
     let total = 0;
-    total = Number(4.99 + calculateSubtotal()).toFixed(2);
+    total = Number(4.99 + calculateSubtotal()).toFixed(2) + "€";
     return total
 }
 
 function renderTotal() {
-    let totalRef = document.getElementById("total_id")
-    totalRef.innerHTML = calculateTotal()
+    let totalButtonRef = document.getElementById("total_for_button_id");
+    let totalRef = document.getElementById("total_id");
+    totalRef.innerHTML = calculateTotal();
+    totalButtonRef.innerHTML = `Buy now (${calculateTotal()})`
 }
