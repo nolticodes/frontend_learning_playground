@@ -114,6 +114,45 @@
             </div>
         </section>
 
+        <section id="mobile_shopping_cart_id" class="shopping_cart" style="display: none;">
+            <h3>Your Basket</h3>
+            <div id="shopping_cart_full_id" style="display: none;">
+                <div id="shopping_cart_id" class="shopping_cart_content">
+                    <div class="basket_dish_list_summary" id="basket_dish_list_id">
+
+                    </div>
+                    <div class="basket_dish_prices_section">
+                        <div class="basket_dish_summary_prices">
+                            <p>Subtotal</p>
+                            <p id="subtotal_id">22.00€</p>
+                        </div>
+                        <div class="basket_dish_summary_prices">
+                            <p>Delivery Fee</p>
+                            <p>4.99€</p>
+                        </div>
+                        <div class="basket_line">
+                        </div>
+                        <div class="basket_dish_summary_prices">
+                            <h4>Total</h4>
+                            <h4 id="total_id">4.99€</h4>
+                        </div>
+
+                        <button onclick="openDialog()">
+                            <h2 id="total_for_button_id">Buy now (4.99€)</h2>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="shopping_cart_empty_id">
+
+                <div class="shopping_cart_content_empty">
+                    <h2>Dein Warenkorb ist noch leer</h2>
+                </div>
+
+            </div>
+
+        </section>
+
         <dialog id="order_received_dialog">
             <div class="dialog_header">
                 <img src="./assets/icons/close.svg" onclick="closeDialog()">
@@ -147,11 +186,12 @@
             </div>
             <div class="icon icon_takeout">
             </div>
-            <div class="icon icon_cart">
-                <img src="./assets/icons/quantity_eclipse.svg">
-                <p id="mobile_cart_quantity_id">2</p>
+            <div onclick="openCart()" class="icon icon_cart">
+                <div id="mobile_cart_quantity_eclipse_id" style="display: none;">
+                    <img src="./assets/icons/quantity_eclipse.svg">
+                    <p id="mobile_cart_quantity_id">2</p>
+                </div>
             </div>
-            
         </div>
     </section>
 

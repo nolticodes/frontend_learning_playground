@@ -169,6 +169,15 @@ function resetAddAgainButton() {
 }
 
 function addCartAmount() {
-    mobileCardAmountRef = document.getElementById("mobile_cart_quantity_id")
+    let mobileCardAmountEclipseRef = document.getElementById("mobile_cart_quantity_eclipse_id")
+    let mobileCardAmountRef = document.getElementById("mobile_cart_quantity_id")
+    mobileCardAmountEclipseRef.style = "display: flex"
     mobileCardAmountRef.innerHTML = cart.length
 }
+
+function openCart() {
+    mobileCartRef = document.getElementById("mobile_shopping_cart_id")
+    mobileCartRef.style = "display: flex";
+}
+
+
