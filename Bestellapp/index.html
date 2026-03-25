@@ -77,16 +77,7 @@
                     <div id="shopping_cart_full_id" style="display: none;">
                         <div id="shopping_cart_id" class="shopping_cart_content">
                             <div class="basket_dish_list_summary" id="basket_dish_list_id">
-                                <div class="basket_dish_list">
-                                    <h4><span>1 x </span>Krosse Krabbe Pizza</h4>
-                                    <div class="basket_dish_list_bottom">
-                                        <div class="basket_dish_list_bottom_counter"><img
-                                                src="./assets/icons/delete.svg">
-                                            <h5>Counter</h5>
-                                        </div>
-                                        <h4>Price</h4>
-                                    </div>
-                                </div>
+                                
                             </div>
                             <div class="basket_dish_prices_section">
                                 <div class="basket_dish_summary_prices">
@@ -123,9 +114,13 @@
         </section>
 
         <dialog id="order_received_dialog">
-        
-            <h2>Vielen Dank!</h2>
-            <h3>Deine Bestellung ist angekommen und wird von uns bearbeitet</h3>
+            <div class="dialog_header">
+                <img src="./assets/icons/close.svg" onclick="closeDialog()">
+            </div>
+            <div class="dialog_main">
+                <h2>Vielen Dank!</h2>
+                <h3>Deine Bestellung ist angekommen und wird von uns bearbeitet</h3>
+            </div>
         
         </dialog>
 

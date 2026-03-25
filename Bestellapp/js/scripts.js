@@ -8,7 +8,7 @@ function init() {
 
 function renderCategories() {
     let categoriesRef = document.getElementById("full_dish_content_id");
-    for (i = 0; i < categories.length; i++) {
+    for (let i = 0; i < categories.length; i++) {
         categoriesRef.innerHTML += getHTMLForCategories(i);
         renderDishesFromCategory(i)
     }
@@ -16,7 +16,7 @@ function renderCategories() {
 
 function renderDishesFromCategory(i) {
     let dishesFromCategoryRef = document.getElementById(`dishes_from_category_${i}`);
-    for (j = 0; j < dishes.length; j++) {
+    for (let j = 0; j < dishes.length; j++) {
         if (dishes[j].category == categories[i]) {
             dishesFromCategoryRef.innerHTML += getHTMLForDishes(j)
         }
@@ -148,5 +148,11 @@ function cartFullOrEmpty() {
 function openDialog() {
     let dialogRef = document.getElementById("order_received_dialog")
     dialogRef.showModal();
+    cart = [];
+    cartFullOrEmpty();
 }
 
+function closeDialog() {
+    let dialogRef = document.getElementById("order_received_dialog")
+    dialogRef.close()
+}
