@@ -176,8 +176,12 @@ function addCartAmount() {
 }
 
 function openCart() {
-    mobileCartRef = document.getElementById("mobile_shopping_cart_id")
+    let mobileCartRef = document.getElementById("mobile_shopping_cart_id")
     mobileCartRef.showModal()
 }
 
+function closeCartDialog() {
+    let dialogCartRef = document.getElementById("mobile_shopping_cart_id")
+    dialogCartRef.close();
+}
 

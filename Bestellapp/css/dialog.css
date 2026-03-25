@@ -54,3 +54,7 @@
     width: 100%;
     height: 100%;
 }
+
+.shopping_cart_mobile h3 {
+    text-align: center;
+}
