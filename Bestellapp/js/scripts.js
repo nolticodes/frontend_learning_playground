@@ -150,9 +150,19 @@ function openDialog() {
     dialogRef.showModal();
     cart = [];
     cartFullOrEmpty();
+    resetAddAgainButton()
 }
 
 function closeDialog() {
     let dialogRef = document.getElementById("order_received_dialog")
-    dialogRef.close()
+    dialogRef.close();
+}
+
+function resetAddAgainButton() {
+    for (let i=0; i < dishes.length; i++) {
+        let buttonAddToBasketRef = document.getElementById(`button_not_added_${i}`);
+        let buttonAddAgainRef = document.getElementById(`button_added_${i}`);
+        buttonAddToBasketRef.style = "display: flex";
+        buttonAddAgainRef.style = "display: none;";
+    }
 }

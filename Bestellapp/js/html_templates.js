@@ -21,7 +21,7 @@ function getHTMLForDishes(j) {
                                     <div class="dish_card_text_left">
                                         <h3>${dishes[j].name}</h3>
                                         <p>${dishes[j].description}</p>
-                                        <p>Zutaten: ${dishes[j].ingredients}</p>
+                                        <p>Zutaten: ${dishes[j].ingredients.join(", ")}</p>
                                         
                                     </div>
                                     <div class="dish_card_text_right">

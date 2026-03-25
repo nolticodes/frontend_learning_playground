@@ -12,17 +12,20 @@
 .dish_card {
     width: 100%;
     height: 200px;
-    padding: 16px 16px;
+    padding: 16px;
     background-color: #FDEADC;
     border-radius: 16px;
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     gap: 16px
 }
 
 .dish_card:hover {
     box-shadow: 5px 5px 5px lightgray;
+}
 
+.dish_card_image {
+    flex: 0 0 240px;
 }
 
 .dish_card img {
@@ -30,16 +33,19 @@
     width: 240px;
     object-fit: cover;
     border-radius: 8px;
+    display: block;
 }
 
 .dish_card_stats {
-    width: 80%;
+    flex: 1;
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     gap: 16px;
 }
 
 .dish_card_text_left {
+    flex: 1;
+    min-width: 0;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -58,7 +64,7 @@
 }
 
 .dish_card_text_right {
-    min-width: 120px;
+    flex: 0 0 120px;
     height: 100%;
     display: flex;
     flex-direction: column;
