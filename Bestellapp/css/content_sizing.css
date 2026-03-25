@@ -74,7 +74,7 @@ main {
     display: flex;
     justify-content: center;
     background-color: orange;
-    margin-bottom: 40px; 
+    margin-bottom: 40px;
 }
 
 .dish_category_max_width {
@@ -120,4 +120,12 @@ footer {
     justify-content: center;
     align-items: center;
     gap: 24px
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1440px) {
+    .content_right {
+        margin-right: 0;
+    }
 }

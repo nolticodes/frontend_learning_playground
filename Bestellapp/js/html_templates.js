@@ -18,18 +18,18 @@ function getHTMLForDishes(j) {
                                     <img src="./assets/dish_img/dish_0${j}.png">
                                 </div>
                                 <div class="dish_card_stats">
-                                    <div class="dish_card_header">
+                                    <div class="dish_card_text_left">
                                         <h3>${dishes[j].name}</h3>
-                                        <h3>${dishes[j].price.toFixed(2)}€</h3>
-                                    </div>
-                                    <div class="dish_card_middle">
                                         <p>${dishes[j].description}</p>
                                         <p>Zutaten: ${dishes[j].ingredients}</p>
+                                        
                                     </div>
-                                    <div class="dish_card_bottom">
+                                    <div class="dish_card_text_right">
+                                        <h3>${dishes[j].price.toFixed(2)}€</h3>
                                         <button onclick="checkDishInCart(${j})" id="button_not_added_${j}">Add to basket</button>
-                                        <button onclick="checkDishInCart (${j})" id="button_added_${j}" style="display: none; color: orange">Add again</button>                                        
+                                        <button onclick="checkDishInCart (${j})" id="button_added_${j}" style="display: none; color: orange">Add again</button>  
                                     </div>
+                                    
                                 </div>
                             </div>
                         </div>
