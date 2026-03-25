@@ -1,4 +1,4 @@
-dialog {
+.dialog_order_received {
     width: 240px;
     height: 400px;
     border: none;
@@ -36,4 +36,21 @@ dialog {
 
 .dialog_main h2 {
     padding-bottom: 16px;
+}
+
+/* DIALOG CART RESPONSIVE */
+
+.dialog_shopping_cart {
+    width: 300px;
+    height: 600px;
+    border: none;
+    border-radius: 16px;
+    background-color: #363534;
+    margin-top: calc((100% - 600px)/2);
+    margin-left: calc((100% - 300px)/2);
+}
+
+.shopping_cart_mobile {
+    width: 100%;
+    height: 100%;
 }

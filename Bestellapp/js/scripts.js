@@ -177,7 +177,7 @@ function addCartAmount() {
 
 function openCart() {
     mobileCartRef = document.getElementById("mobile_shopping_cart_id")
-    mobileCartRef.style = "display: flex";
+    mobileCartRef.showModal()
 }
 
 

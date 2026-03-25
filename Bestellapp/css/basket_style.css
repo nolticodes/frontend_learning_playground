@@ -49,7 +49,6 @@
     color: black
 }
 
-
 .basket_dish_list_bottom {
     padding-top: 8px;
     display: flex;
@@ -132,4 +131,8 @@
 .display_none {
     display: none;
 }
+
+/* RESPONSIVE */
+
+
 
