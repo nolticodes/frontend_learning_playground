@@ -132,11 +132,11 @@
 @media (max-width: 700px) {
     .headline_text {
         text-align: center;
-        padding: 80px 16px;
+        padding: 64px 16px;
     }
 
     .round_img_area {
-        top: 272px
+        top: 232px
     }
 
     .round_img_area img {

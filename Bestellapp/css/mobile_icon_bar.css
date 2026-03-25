@@ -1,0 +1,67 @@
+.mobile_icon_bar {
+    width: 100%;
+    height: 56px;
+    background-color: #363534;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    bottom: 0;
+}
+
+.mobile_icon_bar_max_width {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    justify-content: space-between;
+    padding:  0 16px;
+}
+
+.mobile_icon_bar_max_width img:hover {
+    cursor: pointer;
+}
+
+.icon {
+    width: 26px;
+    height: 28px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.icon_home {
+    background-image: url(../assets/icons/home.svg);
+    
+}
+
+.icon_home:hover {
+    background-image: url(../assets/icons/home_hover.svg);
+    cursor: pointer;
+}
+
+.icon_person {
+    background-image: url(../assets/icons/person.svg);
+}
+
+.icon_person:hover {
+    background-image: url(../assets/icons/person_hover.svg);
+    cursor: pointer;
+}
+
+.icon_takeout {
+    background-image: url(../assets/icons/takeout_dining.svg);
+}
+
+.icon_takeout:hover {
+    background-image: url(../assets/icons/takeout_dining_hover.svg);
+    cursor: pointer;
+}
+
+.icon_cart {
+    background-image: url(../assets/icons/shopping_cart.svg);
+}
+
+.icon_cart:hover {
+    background-image: url(../assets/icons/shopping_cart_hover.svg);
+    cursor: pointer;
+}

@@ -138,12 +138,21 @@ footer {
 }
 
 @media (max-width: 700px) {
+
+    header {
+        height: 80px;
+    }
+
     .main_header img {
         height: 300px;
     }
 
     .header_content {
         padding:  0 16px;
+    }
+
+    .dish_category_full_width {
+        margin-top: 40px;
     }
 
 }
