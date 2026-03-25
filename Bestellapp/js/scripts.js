@@ -44,8 +44,9 @@ function checkDishInCart(j) {
     if (found == false) {
         addToCart(j)
     }
-    cartFullOrEmpty()
+    cartFullOrEmpty();
     changeAddToBasketButton(j);
+    addCartAmount();
 }
 
 function changeAddToBasketButton(j) {
@@ -165,4 +166,9 @@ function resetAddAgainButton() {
         buttonAddToBasketRef.style = "display: flex";
         buttonAddAgainRef.style = "display: none;";
     }
+}
+
+function addCartAmount() {
+    mobileCardAmountRef = document.getElementById("mobile_cart_quantity_id")
+    mobileCardAmountRef.innerHTML = cart.length
 }
