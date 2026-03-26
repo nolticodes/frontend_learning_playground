@@ -4,8 +4,9 @@
     border: none;
     border-radius: 16px;
     background-color: #363534;
-    margin-top: calc((100% - 400px)/ 2);
-    margin-left: calc((100% - 240px)/ 2);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .dialog_header {

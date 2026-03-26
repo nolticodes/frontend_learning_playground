@@ -203,7 +203,8 @@ function openDialog() {
     dialogRef.showModal();
     cart = [];
     cartFullOrEmpty();
-    resetAddAgainButton()
+    resetAddAgainButton();
+    closeCartDialog()
 }
 
 function closeDialog() {
