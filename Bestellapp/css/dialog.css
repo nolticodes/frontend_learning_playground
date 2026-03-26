@@ -46,8 +46,9 @@
     border: none;
     border-radius: 16px;
     background-color: #363534;
-    margin-top: calc((100% - 600px)/2);
-    margin-left: calc((100% - 300px)/2);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .shopping_cart_mobile {
