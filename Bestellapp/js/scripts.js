@@ -237,6 +237,3 @@ function closeCartDialog() {
     let dialogCartRef = document.getElementById("dialog_shopping_cart_id")
     dialogCartRef.close();
 }
-
-
-
