@@ -70,12 +70,6 @@ function changeAddToBasketButton(j) {
     }
 }
 
-// function renderCart() {
-//     let basketDishListRef = document.getElementById("basket_dish_list_id");
-//     basketDishListRef.innerHTML = "";
-//     basketDishListRef.innerHTML += getHTMLForCart();
-// }
-
 function renderBothCarts() {
     renderCartInto("basket_dish_list_id");
     renderCartInto("basket_dish_list_mobile_id");
