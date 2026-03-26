@@ -30,7 +30,9 @@ function addToCart(j) {
         "amount": 1,
         "dishIndex": j
     });
-    cartFullOrEmpty()
+    dishes[j].amount = dishes[j].amount + 1
+    console.log(dishes[j].amount)
+    cartFullOrEmpty();
 }
 
 function checkDishInCart(j) {
@@ -39,6 +41,7 @@ function checkDishInCart(j) {
         if (dishes[j].name == cart[i].name) {
             cart[i].amount = cart[i].amount + 1;
             found = true
+            dishes[j].amount = dishes[j].amount + 1
         }
     }
     if (found == false) {
@@ -56,6 +59,7 @@ function changeAddToBasketButton(j) {
     for (let i = 0; i < cart.length; i++) {
         if (dishes[j].name == cart[i].name) {
             buttonAddToBasketRef.style = "display: none";
+            buttonAddAgainRef.innerHTML = `Added ${dishes[j].amount}`
             buttonAddAgainRef.style = "display: flex; color: orange";
             found = true
         }
@@ -182,14 +186,15 @@ function resetAddAgainButton() {
         let buttonAddAgainRef = document.getElementById(`button_added_${i}`);
         buttonAddToBasketRef.style = "display: flex";
         buttonAddAgainRef.style = "display: none;";
+        dishes[i].amount = 0;
     }
 }
 
 function addCartAmount() {
-    let mobileCardAmountEclipseRef = document.getElementById("mobile_cart_quantity_eclipse_id")
-    let mobileCardAmountRef = document.getElementById("mobile_cart_quantity_id")
-    mobileCardAmountEclipseRef.style = "display: flex"
-    mobileCardAmountRef.innerHTML = cart.length
+    let mobileCardAmountEclipseRef = document.getElementById("mobile_cart_quantity_eclipse_id");
+    let mobileCardAmountRef = document.getElementById("mobile_cart_quantity_id");
+    mobileCardAmountEclipseRef.style = "display: flex";
+    mobileCardAmountRef.innerHTML = cart.length;
 }
 
 function openCart() {

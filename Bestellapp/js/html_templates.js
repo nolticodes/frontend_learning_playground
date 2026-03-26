@@ -27,7 +27,7 @@ function getHTMLForDishes(j) {
                                     <div class="dish_card_text_right">
                                         <h3>${dishes[j].price.toFixed(2)}€</h3>
                                         <button onclick="checkDishInCart(${j})" id="button_not_added_${j}">Add to basket</button>
-                                        <button onclick="checkDishInCart (${j})" id="button_added_${j}" style="display: none; color: orange">Add again</button>  
+                                        <button onclick="checkDishInCart(${j})" id="button_added_${j}" style="display: none; color: orange">Added ${dishes[j].amount}</button>  
                                     </div>
                                     
                                 </div>
