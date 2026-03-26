@@ -134,7 +134,6 @@ function renderSubtotal(SubtotalCartID) {
     subtotalRef.innerHTML = `${calculateSubtotal().toFixed(2)}€`
 }
 
-// renderSubtotal for mobileCart
 
 function calculateTotal() {
     let total = 0;
@@ -142,7 +141,6 @@ function calculateTotal() {
     return total
 }
 
-// redner Total for Mobile Cart
 
 function renderTotalInBothCarts() {
     renderTotal("total_id")
@@ -163,8 +161,6 @@ function renderTotalButton(CartContainerID) {
     let totalButtonRef = document.getElementById(CartContainerID);
     totalButtonRef.innerHTML = `Buy now (${calculateTotal()})`
 }
-
-//cartFollOrtEmty for mobiel Cart
 
 function cartFullInBothCarts() {
     cartFull("shopping_cart_full_id", "shopping_cart_empty_id");
