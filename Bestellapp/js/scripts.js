@@ -99,14 +99,14 @@ function increaseAmount(i) {
     cart[i].amount = cart[i].amount + 1;
     renderSubtotal()
     renderTotal();
-    renderCart();
+    renderBothCarts();
 }
 
 function decreaseAmount(i) {
     cart[i].amount = cart[i].amount - 1;
     renderSubtotal();
     renderTotal();
-    renderCart();
+    renderBothCarts();
 }
 
 function deleteDishFromCart(i) {
@@ -159,7 +159,7 @@ function cartFullOrEmpty() {
         basketRef.style = "display: flex"
         renderSubtotal();
         renderTotal();
-        renderCart();
+        renderBothCarts();
     }
 }
 
