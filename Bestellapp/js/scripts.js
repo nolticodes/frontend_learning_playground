@@ -95,15 +95,17 @@ function getHTMLForCart() {
 
 function increaseAmount(i) {
     cart[i].amount = cart[i].amount + 1;
-    renderSubtotal()
-    renderTotal();
+    renderSubtotalInBothCarts()
+    renderTotalInBothCarts();
+    renderTotalButtonsInBothCarts();
     renderBothCarts();
 }
 
 function decreaseAmount(i) {
     cart[i].amount = cart[i].amount - 1;
-    renderSubtotal();
-    renderTotal();
+    renderSubtotalInBothCarts();
+    renderTotalInBothCarts();
+    renderTotalButtonsInBothCarts();
     renderBothCarts();
 }
 
@@ -116,14 +118,19 @@ function deleteDishFromCart(i) {
 
 function calculateSubtotal() {
     let subtotal = 0;
-    for (i = 0; i < cart.length; i++) {
-        subtotal += (cart[i].amount * cart[i].price);
+    for (let i = 0; i < cart.length; i++) {
+        subtotal += Number(cart[i].amount) * Number(cart[i].price);
     }
     return subtotal
 }
 
-function renderSubtotal() {
-    let subtotalRef = document.getElementById("subtotal_id");
+function renderSubtotalInBothCarts() {
+    renderSubtotal("subtotal_id");
+    renderSubtotal("subtotal_mobile_id");
+}
+
+function renderSubtotal(SubtotalCartID) {
+    let subtotalRef = document.getElementById(SubtotalCartID);
     subtotalRef.innerHTML = `${calculateSubtotal().toFixed(2)}€`
 }
 
@@ -137,26 +144,60 @@ function calculateTotal() {
 
 // redner Total for Mobile Cart
 
-function renderTotal() {
-    let totalButtonRef = document.getElementById("total_for_button_id");
-    let totalRef = document.getElementById("total_id");
+function renderTotalInBothCarts() {
+    renderTotal("total_id")
+    renderTotal("total_mobile_id");
+}
+
+function renderTotalButtonsInBothCarts() {
+    renderTotalButton("total_for_button_id");
+    renderTotalButton("total_for_button_mobile_id")
+}
+
+function renderTotal(CartContainerID) {
+    let totalRef = document.getElementById(CartContainerID);
     totalRef.innerHTML = calculateTotal();
+}
+
+function renderTotalButton(CartContainerID) {
+    let totalButtonRef = document.getElementById(CartContainerID);
     totalButtonRef.innerHTML = `Buy now (${calculateTotal()})`
 }
 
 //cartFollOrtEmty for mobiel Cart
 
+function cartFullInBothCarts() {
+    cartFull("shopping_cart_full_id", "shopping_cart_empty_id");
+    cartFull("shopping_cart_full_mobile_id", "shopping_cart_empty_mobile_id");
+}
+
+function cartEmptyInBothCarts() {
+    cartEmpty("shopping_cart_full_id", "shopping_cart_empty_id");
+    cartEmpty("shopping_cart_full_mobile_id", "shopping_cart_empty_mobile_id");
+}
+
+function cartFull(CartContainerFullID, CartContainerEmptyID) {
+    let basketRef = document.getElementById(CartContainerFullID);
+    let basketEmptyRef = document.getElementById(CartContainerEmptyID);
+    basketRef.style = "display: flex";
+    basketEmptyRef.style = "display: none";
+}
+
+function cartEmpty(CartContainerFullID, CartContainerEmptyID) {
+    let basketRef = document.getElementById(CartContainerFullID);
+    let basketEmptyRef = document.getElementById(CartContainerEmptyID);
+    basketRef.style = "display: none";
+    basketEmptyRef.style = "display: flex";
+}
+
 function cartFullOrEmpty() {
-    let basketRef = document.getElementById("shopping_cart_full_id");
-    let basketEmptyRef = document.getElementById("shopping_cart_empty_id")
     if (cart.length == 0) {
-        basketRef.style = "display: none"
-        basketEmptyRef.style = "display: flex"
+        cartEmptyInBothCarts();
     } else {
-        basketEmptyRef.style = "display: none"
-        basketRef.style = "display: flex"
-        renderSubtotal();
-        renderTotal();
+        cartFullInBothCarts();
+        renderSubtotalInBothCarts();
+        renderTotalInBothCarts();
+        renderTotalButtonsInBothCarts();
         renderBothCarts();
     }
 }
