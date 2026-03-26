@@ -72,6 +72,12 @@ function renderCart() {
     basketDishListRef.innerHTML += getHTMLForCart();
 }
 
+function renderDialogCart() {
+    let basketDishListRef = document.getElementById("basket_dish_list_mobile_id");
+    basketDishListRef.innerHTML = "";
+    basketDishListRef.innerHTML += getHTMLForCart();
+}
+
 function getHTMLForCart() {
     let HTMLForCart = ""
     for (let i = 0; i < cart.length; i++) {
@@ -118,11 +124,15 @@ function renderSubtotal() {
     subtotalRef.innerHTML = `${calculateSubtotal().toFixed(2)}€`
 }
 
+// renderSubtotal for mobileCart
+
 function calculateTotal() {
     let total = 0;
     total = Number(4.99 + calculateSubtotal()).toFixed(2) + "€";
     return total
 }
+
+// redner Total for Mobile Cart
 
 function renderTotal() {
     let totalButtonRef = document.getElementById("total_for_button_id");
@@ -130,6 +140,8 @@ function renderTotal() {
     totalRef.innerHTML = calculateTotal();
     totalButtonRef.innerHTML = `Buy now (${calculateTotal()})`
 }
+
+//cartFollOrtEmty for mobiel Cart
 
 function cartFullOrEmpty() {
     let basketRef = document.getElementById("shopping_cart_full_id");
