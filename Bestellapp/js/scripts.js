@@ -66,16 +66,21 @@ function changeAddToBasketButton(j) {
     }
 }
 
-function renderCart() {
-    let basketDishListRef = document.getElementById("basket_dish_list_id");
-    basketDishListRef.innerHTML = "";
-    basketDishListRef.innerHTML += getHTMLForCart();
+// function renderCart() {
+//     let basketDishListRef = document.getElementById("basket_dish_list_id");
+//     basketDishListRef.innerHTML = "";
+//     basketDishListRef.innerHTML += getHTMLForCart();
+// }
+
+function renderBothCarts() {
+    renderCartInto("basket_dish_list_id");
+    renderCartInto("basket_dish_list_mobile_id");
 }
 
-function renderDialogCart() {
-    let basketDishListRef = document.getElementById("basket_dish_list_mobile_id");
-    basketDishListRef.innerHTML = "";
-    basketDishListRef.innerHTML += getHTMLForCart();
+function renderCartInto(cartContainerID) {
+    let cartContainerRef = document.getElementById(cartContainerID);
+    cartContainerRef.innerHTML = "";
+    cartContainerRef.innerHTML += getHTMLForCart();
 }
 
 function getHTMLForCart() {
@@ -188,12 +193,14 @@ function addCartAmount() {
 }
 
 function openCart() {
-    let mobileCartRef = document.getElementById("mobile_shopping_cart_id")
+    let mobileCartRef = document.getElementById("dialog_shopping_cart_id")
     mobileCartRef.showModal()
 }
 
 function closeCartDialog() {
-    let dialogCartRef = document.getElementById("mobile_shopping_cart_id")
+    let dialogCartRef = document.getElementById("dialog_shopping_cart_id")
     dialogCartRef.close();
 }
+
+
 

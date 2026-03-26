@@ -70,7 +70,7 @@
                 </section>
             </div>
             <div class="content_right">
-                <section class="shopping_cart">
+                <section id="desktop_cart_id" class="shopping_cart">
                     <h3>Your Basket</h3>
                     <div id="shopping_cart_full_id" style="display: none;">
                         <div id="shopping_cart_id" class="shopping_cart_content">
@@ -107,20 +107,20 @@
             </div>
         </section>
 
-        <dialog class="dialog_shopping_cart" id="mobile_shopping_cart_id">
+        <dialog class="dialog_shopping_cart" id="dialog_shopping_cart_id">
             <div class="shopping_cart_mobile">
                 <div class="dialog_header">
                     <img src="./assets/icons/close.svg" onclick="closeCartDialog()">
                 </div>
                 <h3>Your Basket</h3>
-                <div id="shopping_cart_full_id" style="display: none;">
-                    <div id="shopping_cart_id" class="shopping_cart_content">
-                        <div class="basket_dish_list_summary" id="basket_dish_list_id">
+                <div id="shopping_cart_full_mobile_id" style="display: none;">
+                    <div id="shopping_cart_mobile_id" class="shopping_cart_content">
+                        <div class="basket_dish_list_summary" id="basket_dish_list_mobile_id">
                         </div>
                         <div class="basket_dish_prices_section">
                             <div class="basket_dish_summary_prices">
                                 <p>Subtotal</p>
-                                <p id="subtotal_id">22.00€</p>
+                                <p id="subtotal_mobile_id">22.00€</p>
                             </div>
                             <div class="basket_dish_summary_prices">
                                 <p>Delivery Fee</p>
@@ -130,15 +130,15 @@
                             </div>
                             <div class="basket_dish_summary_prices">
                                 <h4>Total</h4>
-                                <h4 id="total_id">4.99€</h4>
+                                <h4 id="total_mobile_id">4.99€</h4>
                             </div>
                             <button onclick="openDialog()">
-                                <h2 id="total_for_button_id">Buy now (4.99€)</h2>
+                                <h2 id="total_for_button_mobile_id">Buy now (4.99€)</h2>
                             </button>
                         </div>
                     </div>
                 </div>
-                <div id="shopping_cart_empty_id">
+                <div id="shopping_cart_empty_mobile_id">
                     <div class="shopping_cart_content_empty">
                         <h2>Dein Warenkorb ist noch leer</h2>
                     </div>
