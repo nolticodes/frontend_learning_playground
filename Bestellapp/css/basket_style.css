@@ -12,6 +12,11 @@
     top: 0
 }
 
+.shopping_cart img {
+    width: 20px;
+    height: 20px;
+}
+
 .shopping_cart_content {
     height: 500px;
     display: flex;
@@ -87,8 +92,9 @@
 }
 
 .basket_dish_list_bottom_counter {
+    width: 50px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     gap: 4px
 }
