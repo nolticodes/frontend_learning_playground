@@ -213,7 +213,7 @@ function closeDialog() {
 }
 
 function resetAddAgainButton() {
-    for (let i=0; i < dishes.length; i++) {
+    for (let i = 0; i < dishes.length; i++) {
         let buttonAddToBasketRef = document.getElementById(`button_not_added_${i}`);
         let buttonAddAgainRef = document.getElementById(`button_added_${i}`);
         buttonAddToBasketRef.style = "display: flex";
@@ -229,6 +229,15 @@ function addCartAmount() {
     mobileCardAmountRef.innerHTML = cart.length;
 }
 
+function resetAddCartAmount() {
+    for (let i = 0; i < dishes.length; i++) {
+        let mobileCardAmountEclipseRef = document.getElementById("mobile_cart_quantity_eclipse_id");
+        let mobileCardAmountRef = document.getElementById("mobile_cart_quantity_id");
+        mobileCardAmountEclipseRef.style = "display: none";
+        mobileCardAmountRef.innerHTML = cart.length;
+    }
+}
+
 function openCart() {
     let mobileCartRef = document.getElementById("dialog_shopping_cart_id")
     mobileCartRef.showModal()
@@ -237,4 +246,5 @@ function openCart() {
 function closeCartDialog() {
     let dialogCartRef = document.getElementById("dialog_shopping_cart_id")
     dialogCartRef.close();
+    resetAddCartAmount()
 }
