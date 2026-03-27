@@ -242,7 +242,7 @@ function resetAddCartAmount() {
 function openCart() {
     let mobileCartRef = document.getElementById("dialog_shopping_cart_id")
     mobileCartRef.showModal();
-    // setTimeout(() => {closeCartDialog();}, 5000);
+    setTimeout(() => {closeCartDialog();}, 5000);
 }
 
 function closeCartDialog() {

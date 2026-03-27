@@ -1,0 +1,24 @@
+main h1,p,a{
+    color: black;
+} 
+main {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.main_content_max_width {
+    padding: 80px 120px;
+    max-width: 1440px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* RESPONSIVE */
+@media (max-width: 800px) {
+    .main_content_max_width {
+        padding: 40px 16px;
+    }
+}
