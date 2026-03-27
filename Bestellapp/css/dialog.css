@@ -2,6 +2,10 @@ dialog::backdrop {
   background: rgb(0 0 0 / 25%);
 }
 
+body:has(dialog[open]) {
+    overflow: hidden;
+}
+
 .dialog_order_received {
     width: 240px;
     height: 400px;
@@ -64,10 +68,12 @@ dialog::backdrop {
     height: 600px;
     border: none;
     border-radius: 16px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
     background-color: #363534;
-    top: 50%;
+    top: calc(100% - 656px);
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%);
 }
 
 .shopping_cart_mobile {
@@ -75,7 +81,7 @@ dialog::backdrop {
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 
@@ -94,4 +100,12 @@ dialog::backdrop {
 
 .shopping_cart_mobile button:hover {
     cursor: pointer;
+}
+
+.shopping_cart_mobile_content_empty {
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }

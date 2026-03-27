@@ -205,6 +205,7 @@ function openDialog() {
     cartFullOrEmpty();
     resetAddAgainButton();
     closeCartDialog()
+    setTimeout(() => {closeDialog();}, 5000);
 }
 
 function closeDialog() {
@@ -240,7 +241,8 @@ function resetAddCartAmount() {
 
 function openCart() {
     let mobileCartRef = document.getElementById("dialog_shopping_cart_id")
-    mobileCartRef.showModal()
+    mobileCartRef.showModal();
+    // setTimeout(() => {closeCartDialog();}, 5000);
 }
 
 function closeCartDialog() {
