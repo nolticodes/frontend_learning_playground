@@ -1,6 +1,4 @@
-main h1,p,a{
-    color: black;
-} 
+
 main {
     width: 100%;
     display: flex;
@@ -15,6 +13,16 @@ main {
     flex-direction: column;
     align-items: flex-start;
 }
+
+.footer_content p,a {
+    color: white;
+}
+
+.main_content_max_width h1,
+.main_content_max_width p,
+.main_content_max_width a{
+    color: black;
+} 
 
 /* RESPONSIVE */
 @media (max-width: 800px) {
