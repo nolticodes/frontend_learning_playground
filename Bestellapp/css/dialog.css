@@ -1,3 +1,7 @@
+dialog::backdrop {
+  background: rgb(0 0 0 / 25%);
+}
+
 .dialog_order_received {
     width: 240px;
     height: 400px;
