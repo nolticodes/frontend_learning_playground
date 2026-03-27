@@ -226,8 +226,12 @@ function resetAddAgainButton() {
 function addCartAmount() {
     let mobileCardAmountEclipseRef = document.getElementById("mobile_cart_quantity_eclipse_id");
     let mobileCardAmountRef = document.getElementById("mobile_cart_quantity_id");
+    let amount = 0;
     mobileCardAmountEclipseRef.style = "display: flex";
-    mobileCardAmountRef.innerHTML = cart.length;
+    for(i = 0; i < cart.length; i++){ 
+        amount = amount + Number(cart[i].amount);
+    }
+    mobileCardAmountRef.innerHTML = amount
 }
 
 function resetAddCartAmount() {
