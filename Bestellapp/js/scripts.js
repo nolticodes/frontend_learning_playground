@@ -82,15 +82,15 @@ function renderCartInto(cartContainerID) {
 }
 
 function getHTMLForCart() {
-    let HTMLForCart = ""
+    let htmlForCart = ""
     for (let i = 0; i < cart.length; i++) {
         if (cart[i].amount > 1) {
-            HTMLForCart += getHTMLForCartDishAmountBiggerThanOne(i)
+            htmlForCart += getHTMLForCartDishAmountBiggerThanOne(i)
         } else {
-            HTMLForCart += getHTMLForCartDishAmountOne(i)
+            htmlForCart += getHTMLForCartDishAmountOne(i)
         }
     }
-    return HTMLForCart
+    return htmlForCart
 }
 
 function increaseAmount(i) {
