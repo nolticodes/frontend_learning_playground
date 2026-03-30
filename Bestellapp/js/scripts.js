@@ -254,3 +254,23 @@ function closeCartDialog() {
     dialogCartRef.close();
     resetAddCartAmount()
 }
+
+function selectDelivery() {
+    let deliveryIconRef = document.getElementById("delivery_icon_id");
+    let pickupIconRef = document.getElementById("pickup_icon_id");
+    deliveryIconRef.classList.add("delivery_selected_icon");
+    deliveryIconRef.classList.remove("delivery_icon")
+    pickupIconRef.classList.remove("pickup_selected_icon");
+    pickupIconRef.classList.add("pickup_icon");
+}
+
+function selectPickup() {
+    let deliveryIconRef = document.getElementById("delivery_icon_id");
+    let pickupIconRef = document.getElementById("pickup_icon_id");
+    pickupIconRef.classList.add("pickup_selected_icon");
+    pickupIconRef.classList.remove("pickup_icon");
+    deliveryIconRef.classList.remove("delivery_selected_icon");
+    deliveryIconRef.classList.add("delivery_icon");
+}
+
+

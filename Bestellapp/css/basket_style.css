@@ -175,17 +175,21 @@
     background-image: url(../assets/icons/delivery.svg);
 }
 
+.delivery_selected_icon {
+    background-image: url(../assets/icons/delivery_selectedsvg.svg);
+}
+
 .delivery_icon:hover {
     cursor: pointer;
     background-image: url(../assets/icons/delivery_selectedsvg.svg)
 }
 
-.delivery_icon:active {
-    background-image: url(../assets/icons/delivery_selectedsvg.svg)
-}
-
 .pickup_icon {
     background-image: url(../assets/icons/pickup.svg);
+}
+
+.pickup_selected_icon {
+    background-image: url(../assets/icons/pickup_selected.svg);
 }
 
 .pickup_icon:hover {
