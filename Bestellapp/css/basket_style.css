@@ -158,6 +158,41 @@
     height: 120px;
 }
 
+.dilvery_pick_switch_section {
+    width: 100%;
+    height: 29px;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.icon {
+    width: 29px;
+    height: 29px;
+}
+
+.delivery_icon {
+    background-image: url(../assets/icons/delivery.svg);
+}
+
+.delivery_icon:hover {
+    cursor: pointer;
+    background-image: url(../assets/icons/delivery_selectedsvg.svg)
+}
+
+.delivery_icon:active {
+    background-image: url(../assets/icons/delivery_selectedsvg.svg)
+}
+
+.pickup_icon {
+    background-image: url(../assets/icons/pickup.svg);
+}
+
+.pickup_icon:hover {
+    cursor: pointer;
+    background-image: url(../assets/icons/pickup_selected.svg)
+}
+
 /* RESPONSIVE */
 
 @media (max-width: 500px) {
