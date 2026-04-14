@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotogalerie</title>
+
+    <script defer src="./script.js">
+    </script>
+
+    <style>
+        #container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 16px;
+            padding: 16px;
+            flex-wrap: wrap;
+        }
+
+        #container img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        #container img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .progress_wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Fortschritt zwischen 0 und 1 */
+        .progress_ring {
+            --progress: 0.75;
+            --circumference: 314.16;
+        }
+
+        .progress_bg,
+        .progress_bar {
+            fill: none;
+            stroke-width: 10;
+        }
+
+        .progress_bg {
+            stroke: #ddd;
+        }
+
+        .progress_bar {
+            stroke: #4caf50;
+            stroke-linecap: round;
+            stroke-dasharray: var(--circumference);
+            stroke-dashoffset: var(--circumference);
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+            animation: fillCircle 2s ease forwards;
+        }
+
+        #progress_text {
+            font-size: 20px;
+            font-family: Arial, sans-serif;
+            fill: #333;
+            font-weight: bold;
+        }
+
+        @keyframes fillCircle {
+            from {
+                stroke-dashoffset: var(--circumference);
+            }
+
+            to {
+                stroke-dashoffset: calc(var(--circumference) * (1 - var(--progress)));
+            }
+        }
+    </style>
+</head>
+
+<body onload="render()">
+
+    <div id="container">
+
+    </div>
+
+    <svg width="120" height="120" viewBox="0 0 100 100" style="--progress: 1;">
+        <circle cx="50" cy="50" r="40" stroke="#e5e5e5" stroke-width="10" fill="none" />
+
+        <circle cx="50" cy="50" r="40" stroke="#FD5B4F" stroke-width="10" fill="none" stroke-linecap="round"
+            transform="rotate(-90 50 50)" stroke-dasharray="251.327" stroke-dashoffset="251.327">
+            <animate attributeName="stroke-dashoffset" dur="1s" from="251.327"
+                to="calc(251.327 * (1 - var(--progress)))" fill="freeze" />
+        </circle>
+
+        <text x="50" y="55" text-anchor="middle" font-size="16" font-family="Arial" font-weight="bold" fill="#333">
+            100%
+        </text>
+    </svg>
+</body>
+
+</html>
