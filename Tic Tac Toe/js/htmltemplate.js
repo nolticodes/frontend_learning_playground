@@ -64,3 +64,29 @@ function generateCrossSVG() {
         </svg>
     `;
 }
+
+function getWinnerLineSVG(x1, y1, x2, y2) {
+    let lineLength = Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
+
+    return `
+        <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+            <line
+                x1="${x1}"
+                y1="${y1}"
+                x2="${x2}"
+                y2="${y2}"
+                stroke="black"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-dasharray="${lineLength}"
+                stroke-dashoffset="${lineLength}">
+                <animate
+                    attributeName="stroke-dashoffset"
+                    from="${lineLength}"
+                    to="0"
+                    dur="0.4s"
+                    fill="freeze" />
+            </line>
+        </svg>
+    `;
+}

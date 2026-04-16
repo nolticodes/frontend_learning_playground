@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,11 +9,12 @@
     <!-- FAVICON -->
 
     <!-- SCRIPT -->
-        <script defer src="./js/script.js"></script>
-        <script defer src="./js/htmltemplate.js"></script>
+    <script defer src="./js/script.js"></script>
+    <script defer src="./js/htmltemplate.js"></script>
     <!-- STYLE -->
-        <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body onload="render()">
 
     <h1>Tic Tac Toe </h1>
@@ -20,6 +22,14 @@
     <section id="tictactoe_table_id">
 
     </section>
-    
+
+    <div id="game_won_dialog_id" class="game_won_dialog d_none">
+        <div class="game_won_dialog_content">
+            <h2>Spiel gewonnen!</h2>
+            <button onclick="restartGame()">Neustarten</button>
+        </div>
+    </div>
+
 </body>
+
 </html>
