@@ -133,3 +133,24 @@ function drawWinnerLine(line) {
 function openGameWonDialog() {
     document.getElementById("game_won_dialog_id").classList.remove("d_none");
 }
+
+function restartGame() {
+    fields = [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+    ];
+
+    currentPlayer = "cross";
+    gameOver = false;
+
+    document.getElementById("game_won_dialog_id").classList.add("d_none");
+
+    render();
+}
