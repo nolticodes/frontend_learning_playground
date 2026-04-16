@@ -4,11 +4,16 @@ body {
     background-color: #f4f6f8;
 }
 
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
 #tictactoe_table_id {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    margin-top: 80px;
 }
 
 .tictactoe_table {
@@ -56,4 +61,17 @@ body {
 
 .tictactoe_table td.cross {
     color: #e74c3c;
+}
+
+.tictactoe_table td {
+    width: 110px;
+    height: 110px;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.tictactoe_table td svg {
+    display: block;
+    margin: auto;
 }
