@@ -94,3 +94,45 @@ h1 {
     overflow: visible;
 }
 
+.game_won_dialog {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.game_won_dialog_content {
+    background: white;
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    min-width: 280px;
+}
+
+.game_won_dialog_content h2 {
+    margin-top: 0;
+    margin-bottom: 24px;
+}
+
+.game_won_dialog_content button {
+    border: none;
+    background-color: #2c3e50;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+}
+
+.game_won_dialog_content button:hover {
+    background-color: #1f2c38;
+}
+
+.d_none {
+    display: none;
+}

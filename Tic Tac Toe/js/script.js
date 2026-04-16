@@ -130,3 +130,6 @@ function drawWinnerLine(line) {
     }
 }
 
+function openGameWonDialog() {
+    document.getElementById("game_won_dialog_id").classList.remove("d_none");
+}
