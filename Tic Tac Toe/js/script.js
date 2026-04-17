@@ -15,8 +15,18 @@ let gameOver = false
 
 function render() {
     let content = `
-        <div class="tictactoe_wrapper">
-            <table class="tictactoe_table">
+        <div class="game_container">
+            <div class="player_turn_display">
+                <div id="turn_circle_id" class="turn_symbol ${currentPlayer === 'circle' ? 'active_turn' : ''}">
+                    ${generateCircleSVG()}
+                </div>
+                <div id="turn_cross_id" class="turn_symbol ${currentPlayer === 'cross' ? 'active_turn' : ''}">
+                    ${generateCrossSVG()}
+                </div>
+            </div>
+
+            <div class="tictactoe_wrapper">
+                <table class="tictactoe_table">
     `;
 
     for (let i = 0; i < 3; i++) {
@@ -39,8 +49,9 @@ function render() {
     }
 
     content += `
-            </table>
-            <div id="winner_line_id" class="winner_line"></div>
+                </table>
+                <div id="winner_line_id" class="winner_line"></div>
+            </div>
         </div>
     `;
 
@@ -65,6 +76,7 @@ function handleClick(index) {
     }
 
     cellRef.onclick = null;
+    updateTurnDisplay();
 
     let winnerInfo = checkWinner();
     if (winnerInfo) {
@@ -153,4 +165,18 @@ function restartGame() {
     document.getElementById("game_won_dialog_id").classList.add("d_none");
 
     render();
+}
+
+function updateTurnDisplay() {
+    let circleRef = document.getElementById("turn_circle_id");
+    let crossRef = document.getElementById("turn_cross_id");
+
+    circleRef.classList.remove("active_turn");
+    crossRef.classList.remove("active_turn");
+
+    if (currentPlayer === "circle") {
+        circleRef.classList.add("active_turn");
+    } else {
+        crossRef.classList.add("active_turn");
+    }
 }
