@@ -221,3 +221,10 @@ h1 {
     color: #000;
     font-weight: 700;
 }
+
+#winner_name_text_id {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}

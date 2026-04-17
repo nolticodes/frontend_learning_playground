@@ -80,10 +80,9 @@ function handleClick(index) {
         return;
     }
 
-    // 👉 Spiel startet hier
     if (!gameStarted) {
         gameStarted = true;
-        hideNameButtons(); // optional für sofortiges UI-Update
+        hideNameButtons();
     }
 
     let cellRef = document.getElementById(`cell_${index}`);
@@ -102,12 +101,13 @@ function handleClick(index) {
     updateTurnDisplay();
 
     let winnerInfo = checkWinner();
+
     if (winnerInfo) {
         gameOver = true;
-        drawWinnerLine(winnerInfo);
+        drawWinnerLine(winnerInfo.line);
 
         setTimeout(function () {
-            openGameWonDialog();
+            openGameWonDialog(winnerInfo.winner);
         }, 500);
     }
 }
@@ -117,11 +117,9 @@ function checkWinner() {
         { combo: [0, 1, 2], line: "row1" },
         { combo: [3, 4, 5], line: "row2" },
         { combo: [6, 7, 8], line: "row3" },
-
         { combo: [0, 3, 6], line: "col1" },
         { combo: [1, 4, 7], line: "col2" },
         { combo: [2, 5, 8], line: "col3" },
-
         { combo: [0, 4, 8], line: "diag1" },
         { combo: [2, 4, 6], line: "diag2" }
     ];
@@ -136,7 +134,10 @@ function checkWinner() {
             fields[a] === fields[b] &&
             fields[a] === fields[c]
         ) {
-            return winningCombinations[i].line;
+            return {
+                winner: fields[a],
+                line: winningCombinations[i].line
+            };
         }
     }
 
@@ -204,15 +205,15 @@ function updateTurnDisplay() {
 function changePlayerName(playerNumber) {
     let newName = prompt("Bitte gib einen neuen Namen ein:");
 
-    if (newName === null || newName.trim() === "") {
+    if (!newName || newName.trim() === "") {
         return;
     }
 
     if (playerNumber === 1) {
-        player1Name = newName.trim();
+        player1Name = newName.trim(); // ✅ WICHTIG
         document.getElementById("player1_name_id").innerHTML = player1Name;
     } else {
-        player2Name = newName.trim();
+        player2Name = newName.trim(); // ✅ WICHTIG
         document.getElementById("player2_name_id").innerHTML = player2Name;
     }
 }
@@ -220,4 +221,20 @@ function changePlayerName(playerNumber) {
 function hideNameButtons() {
     let buttons = document.querySelectorAll(".player_box button");
     buttons.forEach(btn => btn.style.display = "none");
+}
+
+function openGameWonDialog(winner) {
+    let winnerNameTextRef = document.getElementById("winner_name_text_id");
+
+    let winnerName;
+
+    if (winner === "circle") {
+        winnerName = player1Name;
+    } else {
+        winnerName = player2Name;
+    }
+
+    winnerNameTextRef.innerHTML = `${winnerName} hat gewonnen!`;
+
+    document.getElementById("game_won_dialog_id").classList.remove("d_none");
 }
