@@ -9,11 +9,17 @@ let fields = [
     null,
     null,
 ];
-let currentPlayer = "cross";
-let gameOver = false;
 let player1Name = "Player 1";
 let player2Name = "Player 2";
+let currentPlayer = null;
 let gameStarted = false;
+let gameOver = false;
+let isChoosingStarter = true;
+
+function init() {
+    render();
+    chooseStartingPlayer();
+}
 
 function render() {
     let content = `
@@ -76,7 +82,7 @@ function render() {
 }
 
 function handleClick(index) {
-    if (fields[index] !== null || gameOver) {
+    if (isChoosingStarter || fields[index] !== null || gameOver) {
         return;
     }
 
@@ -98,7 +104,6 @@ function handleClick(index) {
     }
 
     cellRef.onclick = null;
-    updateTurnDisplay();
 
     let winnerInfo = checkWinner();
 
@@ -109,7 +114,10 @@ function handleClick(index) {
         setTimeout(function () {
             openGameWonDialog(winnerInfo.winner);
         }, 500);
+        return;
     }
+
+    updateTurnDisplay();
 }
 
 function checkWinner() {
@@ -183,23 +191,7 @@ function restartGame() {
 }
 
 function updateTurnDisplay() {
-    let circleRef = document.getElementById("turn_circle_id");
-    let crossRef = document.getElementById("turn_cross_id");
-    let player1Ref = document.getElementById("player1_name_id");
-    let player2Ref = document.getElementById("player2_name_id");
-
-    circleRef.classList.remove("active_turn");
-    crossRef.classList.remove("active_turn");
-    player1Ref.classList.remove("active_player_name");
-    player2Ref.classList.remove("active_player_name");
-
-    if (currentPlayer === "circle") {
-        circleRef.classList.add("active_turn");
-        player1Ref.classList.add("active_player_name");
-    } else {
-        crossRef.classList.add("active_turn");
-        player2Ref.classList.add("active_player_name");
-    }
+    setActiveTurnDisplay(currentPlayer);
 }
 
 function changePlayerName(playerNumber) {
@@ -237,4 +229,48 @@ function openGameWonDialog(winner) {
     winnerNameTextRef.innerHTML = `${winnerName} hat gewonnen!`;
 
     document.getElementById("game_won_dialog_id").classList.remove("d_none");
+}
+
+function setActiveTurnDisplay(player) {
+    let circleRef = document.getElementById("turn_circle_id");
+    let crossRef = document.getElementById("turn_cross_id");
+    let player1Ref = document.getElementById("player1_name_id");
+    let player2Ref = document.getElementById("player2_name_id");
+
+    circleRef.classList.remove("active_turn");
+    crossRef.classList.remove("active_turn");
+    player1Ref.classList.remove("active_player_name");
+    player2Ref.classList.remove("active_player_name");
+
+    if (player === "circle") {
+        circleRef.classList.add("active_turn");
+        player1Ref.classList.add("active_player_name");
+    } else if (player === "cross") {
+        crossRef.classList.add("active_turn");
+        player2Ref.classList.add("active_player_name");
+    }
+}
+
+function chooseStartingPlayer() {
+    let steps = 14;
+    let currentStep = 0;
+    let activeSymbol = "circle";
+
+    animateStarterChoice();
+
+    function animateStarterChoice() {
+        setActiveTurnDisplay(activeSymbol);
+
+        activeSymbol = activeSymbol === "circle" ? "cross" : "circle";
+        currentStep++;
+
+        if (currentStep < steps) {
+            let delay = 80 + currentStep * 35;
+            setTimeout(animateStarterChoice, delay);
+        } else {
+            currentPlayer = Math.random() < 0.5 ? "circle" : "cross";
+            isChoosingStarter = false;
+            setActiveTurnDisplay(currentPlayer);
+        }
+    }
 }
