@@ -9,19 +9,36 @@ let fields = [
     null,
     null,
 ];
-
 let currentPlayer = "cross";
-let gameOver = false
+let gameOver = false;
+let player1Name = "Player 1";
+let player2Name = "Player 2";
+let gameStarted = false;
 
 function render() {
     let content = `
         <div class="game_container">
             <div class="player_turn_display">
+                <div class="player_box">
+                    <span id="player1_name_id" class="player_name ${currentPlayer === 'circle' ? 'active_player_name' : ''}">
+                        ${player1Name}
+                    </span>
+                    ${!gameStarted ? `<button onclick="changePlayerName(1)">✏️</button>` : ''}
+                </div>
+
                 <div id="turn_circle_id" class="turn_symbol ${currentPlayer === 'circle' ? 'active_turn' : ''}">
                     ${generateCircleSVG()}
                 </div>
+
                 <div id="turn_cross_id" class="turn_symbol ${currentPlayer === 'cross' ? 'active_turn' : ''}">
                     ${generateCrossSVG()}
+                </div>
+
+                <div class="player_box">
+                    <span id="player2_name_id" class="player_name ${currentPlayer === 'cross' ? 'active_player_name' : ''}">
+                        ${player2Name}
+                    </span>
+                    ${!gameStarted ? `<button onclick="changePlayerName(2)">✏️</button>` : ''}
                 </div>
             </div>
 
@@ -61,6 +78,12 @@ function render() {
 function handleClick(index) {
     if (fields[index] !== null || gameOver) {
         return;
+    }
+
+    // 👉 Spiel startet hier
+    if (!gameStarted) {
+        gameStarted = true;
+        hideNameButtons(); // optional für sofortiges UI-Update
     }
 
     let cellRef = document.getElementById(`cell_${index}`);
@@ -147,20 +170,11 @@ function openGameWonDialog() {
 }
 
 function restartGame() {
-    fields = [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-    ];
+    fields = [null, null, null, null, null, null, null, null, null];
 
     currentPlayer = "cross";
     gameOver = false;
+    gameStarted = false;
 
     document.getElementById("game_won_dialog_id").classList.add("d_none");
 
@@ -170,13 +184,40 @@ function restartGame() {
 function updateTurnDisplay() {
     let circleRef = document.getElementById("turn_circle_id");
     let crossRef = document.getElementById("turn_cross_id");
+    let player1Ref = document.getElementById("player1_name_id");
+    let player2Ref = document.getElementById("player2_name_id");
 
     circleRef.classList.remove("active_turn");
     crossRef.classList.remove("active_turn");
+    player1Ref.classList.remove("active_player_name");
+    player2Ref.classList.remove("active_player_name");
 
     if (currentPlayer === "circle") {
         circleRef.classList.add("active_turn");
+        player1Ref.classList.add("active_player_name");
     } else {
         crossRef.classList.add("active_turn");
+        player2Ref.classList.add("active_player_name");
     }
+}
+
+function changePlayerName(playerNumber) {
+    let newName = prompt("Bitte gib einen neuen Namen ein:");
+
+    if (newName === null || newName.trim() === "") {
+        return;
+    }
+
+    if (playerNumber === 1) {
+        player1Name = newName.trim();
+        document.getElementById("player1_name_id").innerHTML = player1Name;
+    } else {
+        player2Name = newName.trim();
+        document.getElementById("player2_name_id").innerHTML = player2Name;
+    }
+}
+
+function hideNameButtons() {
+    let buttons = document.querySelectorAll(".player_box button");
+    buttons.forEach(btn => btn.style.display = "none");
 }
