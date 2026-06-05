@@ -16,4 +16,12 @@ export class ProductDetail {
       "price": 2500000
     }
 
+    deleteDetail() {
+      this.detail.name = "",
+      this.detail.description = "",
+      this.detail.price = 0,
+      this.detail.specs = "",
+      this.detail.price = 0
+    }
+
 }
