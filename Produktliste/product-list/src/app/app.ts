@@ -8,9 +8,7 @@ import { ProductDetail } from "./shared/components/product-detail/product-detail
   selector: 'app-root',
   imports: [
     RouterOutlet, 
-    Header, 
-    ProductList,
-    ProductDetail,
+    Header,
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss'
