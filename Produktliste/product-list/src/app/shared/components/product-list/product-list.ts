@@ -13,4 +13,8 @@ export class ProductList {
 
 
   list = this.productService.productList
+
+  ngOnInit() {
+    this.productService.setProductDetailkByName('Gaming Maus');
+  }
 }
